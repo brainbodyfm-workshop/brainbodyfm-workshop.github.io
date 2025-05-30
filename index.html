@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeurIPS 2025 Workshop - Foundation Models for the Brain and Body</title>
+    <meta name="description"
+        content="Join us to explore foundation models for the brain and body. December 2025 in San Diego, California.">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brainbodyfm-workshop.github.io/">
+    <meta property="og:title" content="NeurIPS 2025 Workshop - Foundation Models for the Brain and Body">
+    <meta property="og:description"
+        content="Join us to explore foundation models for the brain and body. December 2025 in San Diego, California.">
+    <meta property="og:image" content="https://brainbodyfm-workshop.github.io/assets/preview-image.png">
+    <meta property="og:image:secure_url" content="https://brainbodyfm-workshop.github.io/assets/preview-image.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="brainbodyfm-workshop.github.io">
+    <meta property="twitter:url" content="https://brainbodyfm-workshop.github.io/">
+    <meta name="twitter:title" content="NeurIPS 2025 Workshop - Foundation Models for the Brain and Body">
+    <meta name="twitter:description"
+        content="Join us to explore foundation models for the brain and body. December 2025 in San Diego, California.">
+    <meta name="twitter:image" content="https://brainbodyfm-workshop.github.io/assets/preview-image.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="container">
+            <div class="navbar-nav mx-auto">
+                <a class="nav-link" href="#abstract">Abstract</a>
+                <a class="nav-link" href="#speakers">Speakers</a>
+                <a class="nav-link" href="#organizers">Organizers</a>
+                <a class="nav-link" href="#schedule">Schedule</a>
+                <a class="nav-link" href="#call-for-papers">Call for Papers</a>
+                <a class="nav-link" href="#call-for-demos">Call for Demos</a>
+                <a class="nav-link" href="#travel-awards">Travel Awards</a>
+                <a class="nav-link" href="#sponsors">Sponsors</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="home" class="py-5 header-extra-padding text-center">
+        <!-- Animated Biosignal Background -->
+        <div class="biosignal-background">
+            <div class="biosignal-row">
+                <img src="assets/modalities/eeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/fmri.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/emg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/meg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ecg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ieeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/wearable.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/calcium.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/microarray.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/eeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/fmri.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/emg.png" class="biosignal-icon" alt="">
+            </div>
+            <div class="biosignal-row">
+                <img src="assets/modalities/meg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/calcium.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ecg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/wearable.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ieeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/microarray.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/eeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/fmri.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/emg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/meg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ecg.png" class="biosignal-icon" alt="">
+            </div>
+            <div class="biosignal-row">
+                <img src="assets/modalities/ieeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/eeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/calcium.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/fmri.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/wearable.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/emg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/microarray.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/meg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ecg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ieeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/eeg.png" class="biosignal-icon" alt="">
+            </div>
+            <div class="biosignal-row">
+                <img src="assets/modalities/fmri.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/emg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/wearable.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/calcium.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/meg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ecg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/microarray.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ieeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/eeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/fmri.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/emg.png" class="biosignal-icon" alt="">
+            </div>
+            <div class="biosignal-row">
+                <img src="assets/modalities/calcium.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/meg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ieeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/wearable.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ecg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/eeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/microarray.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/fmri.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/emg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/meg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/calcium.png" class="biosignal-icon" alt="">
+            </div>
+            <div class="biosignal-row">
+                <img src="assets/modalities/wearable.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ecg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/eeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ieeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/fmri.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/microarray.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/emg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/calcium.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/meg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/wearable.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ecg.png" class="biosignal-icon" alt="">
+            </div>
+            <div class="biosignal-row">
+                <img src="assets/modalities/eeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/microarray.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/fmri.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/calcium.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/emg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ieeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/meg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/wearable.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/ecg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/eeg.png" class="biosignal-icon" alt="">
+                <img src="assets/modalities/fmri.png" class="biosignal-icon" alt="">
+            </div>
+        </div>
+
+        <div class="container position-relative">
+            <div class="workshop-title">
+                <h1 class="display-3">
+                    <div class="title-main">Foundation Models for the Brain and Body</div>
+                    <div class="title-workshop">NeurIPS 2025 Workshop</div>
+                </h1>
+                <p class="lead">December 2025 | San Diego, California</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Abstract Section -->
+    <section id="abstract" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Workshop Description</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <p class="lead">
+                        Our brains and bodies speak a rich and complex biological language of neural and physiological
+                        signals, a language that AI models are increasingly capable of deciphering as large-scale
+                        datasets become available. Recent advances in brain interfacing and wearable technologies,
+                        including EEG, intracortical electrophysiology, EMG, MEG, and ECG, have enabled the broad
+                        collection of these signals across real-world contexts and diverse populations. This growing
+                        wealth of data is driving a shift toward foundation models: large-scale, pretrained AI systems
+                        designed to learn from biosignals and generalize across diverse downstream applications, from
+                        brain-computer interfacing to health monitoring.
+                    </p>
+                    <p class="lead">
+                        Realizing this potential, however, requires addressing the unique challenges that come with
+                        biosignal timeseries: they are noisy, heterogeneous, and collected under variable conditions
+                        across subjects, devices, and environments. To meet these challenges, this workshop brings
+                        together neuroscientists, biomedical engineers, wearable tech researchers, and machine learning
+                        experts advancing foundation model approaches. Through interdisciplinary dialogue, we aim to
+                        catalyze the next generation of AI models that can capture the complexity of the brain, body,
+                        and behavior at scale.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Invited Speakers</h2>
+            <div class="row justify-content-center" id="speakers-row">
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 speaker-card">
+                        <img src="assets/banville.jpg" class="card-img-top" alt="Hubert Banville">
+                        <div class="card-body">
+                            <h5 class="card-title">Hubert Banville</h5>
+                            <p class="card-text">Meta</p>
+                            <a href="#" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 speaker-card">
+                        <img src="assets/zhou.jpg" class="card-img-top" alt="Juan Helen Zhou">
+                        <div class="card-body">
+                            <h5 class="card-title">Juan Helen Zhou</h5>
+                            <p class="card-text">National University of Singapore</p>
+                            <a href="#" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 speaker-card">
+                        <img src="assets/guan.jpg" class="card-img-top" alt="Cuntai Guan">
+                        <div class="card-body">
+                            <h5 class="card-title">Cuntai Guan</h5>
+                            <p class="card-text">Nanyang Technological University, Singapore</p>
+                            <a href="#" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 speaker-card">
+                        <img src="assets/sapiro.jpg" class="card-img-top" alt="Guillermo Sapiro">
+                        <div class="card-body">
+                            <h5 class="card-title">Guillermo Sapiro</h5>
+                            <p class="card-text">Apple, Princeton University</p>
+                            <a href="#" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 speaker-card">
+                        <img src="assets/eva.png" class="card-img-top" alt="Eva Dyer">
+                        <div class="card-body">
+                            <h5 class="card-title">Eva Dyer</h5>
+                            <p class="card-text">University of Pennsylvania</p>
+                            <a href="https://dyerlab.gatech.edu/" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizers Section -->
+    <section id="organizers" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Organizers</h2>
+            <div class="row" id="organizers-row">
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 organizer-card">
+                        <img src="assets/mehdi.jpg" class="card-img-top" alt="Mehdi Azabou">
+                        <div class="card-body">
+                            <h5 class="card-title">Mehdi Azabou</h5>
+                            <p class="card-text">Columbia University, ARNI</p>
+                            <a href="https://mehai.dev" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 organizer-card">
+                        <img src="assets/cole.png" class="card-img-top" alt="Cole Hurwitz">
+                        <div class="card-body">
+                            <h5 class="card-title">Cole Hurwitz</h5>
+                            <p class="card-text">Columbia University</p>
+                            <a href="https://colehurwitz.github.io/" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 organizer-card">
+                        <img src="assets/sophia.jpg" class="card-img-top" alt="Sophia Sanborn">
+                        <div class="card-body">
+                            <h5 class="card-title">Sophia Sanborn</h5>
+                            <p class="card-text">Stanford University</p>
+                            <a href="#" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 organizer-card">
+                        <img src="assets/sana.png" class="card-img-top" alt="Sana Tonekaboni">
+                        <div class="card-body">
+                            <h5 class="card-title">Sana Tonekaboni</h5>
+                            <p class="card-text">MIT, Harvard</p>
+                            <a href="#" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 organizer-card">
+                        <img src="assets/paul.jpg" class="card-img-top" alt="Paul Scotti">
+                        <div class="card-body">
+                            <h5 class="card-title">Paul Scotti</h5>
+                            <p class="card-text">Sophont, Princeton</p>
+                            <a href="#" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 organizer-card">
+                        <img src="assets/nanda.jpg" class="card-img-top" alt="Nanda H Krishna">
+                        <div class="card-body">
+                            <h5 class="card-title">Nanda H Krishna</h5>
+                            <p class="card-text">Mila</p>
+                            <a href="https://nandahkrishna.com/" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 organizer-card">
+                        <img src="assets/guetschel.jpeg" class="card-img-top" alt="Pierre Guetschel">
+                        <div class="card-body">
+                            <h5 class="card-title">Pierre Guetschel</h5>
+                            <p class="card-text">Donders Institute</p>
+                            <a href="#" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steering Committee -->
+            <div class="row mt-5" id="steering-committee">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">Steering Committee</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center" id="steering-row">
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 organizer-card">
+                        <img src="assets/gramfort.jpg" class="card-img-top" alt="Alexandre Gramfort">
+                        <div class="card-body">
+                            <h5 class="card-title">Alexandre Gramfort</h5>
+                            <p class="card-text">Meta</p>
+                            <a href="#" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 organizer-card">
+                        <img src="assets/paninski.png" class="card-img-top" alt="Liam Paninski">
+                        <div class="card-body">
+                            <h5 class="card-title">Liam Paninski</h5>
+                            <p class="card-text">Columbia University</p>
+                            <a href="#" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 organizer-card">
+                        <img src="assets/blake.png" class="card-img-top" alt="Blake Richards">
+                        <div class="card-body">
+                            <h5 class="card-title">Blake Richards</h5>
+                            <p class="card-text">Mila</p>
+                            <a href="https://linclab.mila.quebec" class="stretched-link" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Schedule</h2>
+
+            <div class="day-container">
+                <h3 class="day-header">December 2025 - NeurIPS Workshop Day</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="time-block">8:45 - 9:00</div>
+                        <div class="content-block">
+                            <h4>Introduction & Opening Remarks</h4>
+                        </div>
+                        <div class="speaker-block">Mehdi Azabou, Cole Hurwitz</div>
+                    </div>
+
+                    <!-- Session I -->
+                    <div class="timeline-item break">
+                        <div class="time-block"></div>
+                        <div class="content-block">
+                            <h4>Session I: Modeling Brain-Wide Activity with Imaging and EEG</h4>
+                        </div>
+                        <div class="speaker-block"></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time-block">9:00 - 9:30</div>
+                        <div class="content-block">
+                            <h4>Towards generalizable brain decoders with EEG foundation models</h4>
+                        </div>
+                        <div class="speaker-block">Hubert Banville (Meta)</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time-block">9:30 - 10:00</div>
+                        <div class="content-block">
+                            <h4>Interpretable Brain Dynamics Foundation Models for vision decoding and behavioral
+                                outcome prediction</h4>
+                        </div>
+                        <div class="speaker-block">Juan Helen Zhou (National University of Singapore)</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time-block">10:00 - 10:30</div>
+                        <div class="content-block">
+                            <h4>Spotlight Talks</h4>
+                            <p class="small text-muted">3 contributed talks (10 mins each)</p>
+                        </div>
+                        <div class="speaker-block">Selected Contributors</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time-block">10:30 - 12:00</div>
+                        <div class="content-block">
+                            <h4>Poster Session I + Demo Session</h4>
+                            <p class="small text-muted">Contributed Works + Live Demos</p>
+                        </div>
+                        <div class="speaker-block"></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time-block">12:00 - 13:00</div>
+                        <div class="content-block">
+                            <h4>Break</h4>
+                        </div>
+                        <div class="speaker-block"></div>
+                    </div>
+
+                    <!-- Session II -->
+                    <div class="timeline-item break">
+                        <div class="time-block"></div>
+                        <div class="content-block">
+                            <h4>Session II: Modeling Physiological and Wearable Signals</h4>
+                        </div>
+                        <div class="speaker-block"></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time-block">13:00 - 13:30</div>
+                        <div class="content-block">
+                            <h4>Towards Robust Multimodal Physiological Foundation Models: Handling Arbitrary Missing
+                                Modalities</h4>
+                        </div>
+                        <div class="speaker-block">Cuntai Guan (Nanyang Technological University)</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time-block">13:30 - 14:00</div>
+                        <div class="content-block">
+                            <h4>TBA</h4>
+                        </div>
+                        <div class="speaker-block">Guillermo Sapiro (Apple, Princeton University)</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time-block">14:00 - 14:30</div>
+                        <div class="content-block">
+                            <h4>Spotlight Talks</h4>
+                            <p class="small text-muted">3 contributed talks (10 mins each)</p>
+                        </div>
+                        <div class="speaker-block">Selected Contributors</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time-block">14:30 - 15:00</div>
+                        <div class="content-block">
+                            <h4>Coffee Break</h4>
+                        </div>
+                        <div class="speaker-block"></div>
+                    </div>
+
+                    <!-- Session III -->
+                    <div class="timeline-item break">
+                        <div class="time-block"></div>
+                        <div class="content-block">
+                            <h4>Session III: Modeling the Brain at Single-Neuron Resolution</h4>
+                        </div>
+                        <div class="speaker-block"></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time-block">15:00 - 15:30</div>
+                        <div class="content-block">
+                            <h4>Embracing Complexity: Foundation Models and the Data-Driven Future of Neuroscience
+                            </h4>
+                        </div>
+                        <div class="speaker-block">Eva Dyer (University of Pennsylvania)</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time-block">15:30 - 16:30</div>
+                        <div class="content-block">
+                            <h4>Panel Discussion</h4>
+                            <p class="small text-muted">Panelists: Eva Dyer, Guillermo Sapiro, Hubert Banville, Juan
+                                Helen Zhou, Cuntai Guan</p>
+                        </div>
+                        <div class="speaker-block">Moderated Discussion</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time-block">16:30 - 17:00</div>
+                        <div class="content-block">
+                            <h4>Spotlight Talks</h4>
+                            <p class="small text-muted">3 contributed talks (10 mins each)</p>
+                        </div>
+                        <div class="speaker-block">Selected Contributors</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time-block">17:00 - 18:00</div>
+                        <div class="content-block">
+                            <h4>Poster Session II</h4>
+                            <p class="small text-muted">Contributed Works</p>
+                        </div>
+                        <div class="speaker-block"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Call for Papers Section -->
+    <section id="call-for-papers" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Call for Papers</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <p class="lead mb-4">
+                        We invite submissions of novel research in neuroscience, biosignal analysis,
+                        and machine learning, with a focus on foundation models and representation learning for neural
+                        and physiological data.
+                    </p>
+
+                    <h4 class="mb-3">Relevant Topics Include:</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i>Large-scale pretraining on neural or
+                                    physiological signals</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Scaling laws for neural foundation
+                                    models</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Brain-computer interfaces and neural
+                                    decoding</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Self-supervised learning for
+                                    biosignals
+                                </li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Transfer learning across recording
+                                    modalities</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Wearable technology and real-world
+                                    deployment</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i>Cross-subject and cross-task
+                                    generalization</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Multimodal integration of biosignals
+                                </li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Robust models for noisy biosignal data
+                                </li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Applications to mental health and
+                                    clinical diagnosis</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Neurotechnology and assistive devices
+                                </li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Interpretability of biosignal
+                                    representations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p class="mb-3">The topics listed above are not exhaustive. We encourage submissions that
+                        explore how machine learning can advance our understanding and
+                        analysis of neural and physiological signals.</p>
+
+                    <h4 class="mb-3 mt-4">Examples of Biosignals:</h4>
+                    <div class="row text-center mb-4">
+                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
+                            <div class="modality-card p-3 border rounded">
+                                <img src="assets/modalities/eeg.png" class="modality-image mb-2" alt="EEG">
+                                <h6>EEG</h6>
+                                <small class="text-muted">Electroencephalography</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
+                            <div class="modality-card p-3 border rounded">
+                                <img src="assets/modalities/fmri.png" class="modality-image mb-2" alt="fMRI">
+                                <h6>fMRI</h6>
+                                <small class="text-muted">Functional MRI</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
+                            <div class="modality-card p-3 border rounded">
+                                <img src="assets/modalities/emg.png" class="modality-image mb-2" alt="EMG">
+                                <h6>EMG</h6>
+                                <small class="text-muted">Electromyography</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
+                            <div class="modality-card p-3 border rounded">
+                                <img src="assets/modalities/meg.png" class="modality-image mb-2" alt="MEG">
+                                <h6>MEG</h6>
+                                <small class="text-muted">Magnetoencephalography</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
+                            <div class="modality-card p-3 border rounded">
+                                <img src="assets/modalities/ecg.png" class="modality-image mb-2" alt="ECG">
+                                <h6>ECG</h6>
+                                <small class="text-muted">Electrocardiography</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
+                            <div class="modality-card p-3 border rounded">
+                                <img src="assets/modalities/microarray.png" class="modality-image mb-2"
+                                    alt="Microarrays">
+                                <h6>Microarrays</h6>
+                                <small class="text-muted">Spikes, LFPs</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
+                            <div class="modality-card p-3 border rounded">
+                                <img src="assets/modalities/ieeg.png" class="modality-image mb-2" alt="iEEG">
+                                <h6>iEEG</h6>
+                                <small class="text-muted">Intracranial EEG</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
+                            <div class="modality-card p-3 border rounded">
+                                <img src="assets/modalities/wearable.png" class="modality-image mb-2" alt="Wearable">
+                                <h6>Wearables</h6>
+                                <small class="text-muted">Wearable sensors</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
+                            <div class="modality-card p-3 border rounded">
+                                <img src="assets/modalities/calcium.png" class="modality-image mb-2" alt="Calcium">
+                                <h6>OPhys</h6>
+                                <small class="text-muted">Calcium imaging</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="mb-3">Submission Guidelines</h4>
+                    <div class="mb-4">
+                        <h5><i class="fas fa-file-alt me-2" style="font-size: 0.9rem;"></i>Format and Length</h5>
+                        <p class="mb-3">Submissions should be <strong>5 pages maximum</strong> (excluding references)
+                            using the <a href="https://media.neurips.cc/Conferences/NeurIPS2025/Styles.zip"
+                                target="_blank" class="text-decoration-none">NeurIPS 2025 LaTeX style</a>. All
+                            submissions will be made through <strong>OpenReview</strong> (link will be provided upon
+                            workshop acceptance).</p>
+
+                        <h5><i class="fas fa-user-secret me-2" style="font-size: 0.9rem;"></i>Anonymization</h5>
+                        <p class="mb-3">All submissions must be fully anonymized and cannot contain any identifying
+                            information that would violate our double-blind reviewing policy.</p>
+
+                        <h5><i class="fas fa-star me-2" style="font-size: 0.9rem;"></i>Novelty Requirement</h5>
+                        <p class="mb-3">We strongly discourage submissions of previously completed or published work.
+                        </p>
+
+                        <h5><i class="fas fa-microphone me-2" style="font-size: 0.9rem;"></i>Spotlight Presentations
+                        </h5>
+                        <p class="mb-0">The <strong>8 submissions</strong> will be selected for
+                            spotlight talks during the workshop.</p>
+                    </div>
+
+                    <!-- Submission Details Box -->
+                    <div class="important-dates-box">
+                        <h5><i class="fas fa-calendar-alt me-2"></i>Important Dates</h5>
+                        <div class="dates-grid">
+                            <div class="date-item">
+                                <strong>Submission Deadline:</strong> August 22, 2025
+                            </div>
+                            <div class="date-item">
+                                <strong>Notification:</strong> September 22, 2025
+                            </div>
+                            <div class="date-item">
+                                <strong>Camera-Ready:</strong> October 15, 2025
+                            </div>
+                            <div class="date-item">
+                                <strong>Workshop Date:</strong> December 2025
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- EEG Challenge Section -->
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card border-primary">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary mb-3" style="font-size: 1rem;"">
+                                <i class=" fas fa-trophy me-2"></i>EEG Foundation Challenge 2025
+                            </h3>
+                            <p class="card-text lead mb-3" style="font-size: 1rem;">
+                                The <a href="https://eeg2025.github.io" target="_blank" class="text-decoration-none">EEG
+                                    Foundation Challenge 2025</a>, accepted as a NeurIPS 2025 competition, invites
+                                participants to develop EEG models that generalize across subjects and tasks using
+                                high-density EEG data from over 3,000 individuals.
+                            </p>
+                            <p class="card-text lead mb-4" style="font-size: 1rem;">
+                                The top entry in the challenge will be invited to give a contributed talk at our
+                                workshop.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call for Demos Section -->
+    <section id="call-for-demos" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Call for Demos</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <p class="lead mb-4">
+                        We invite submissions for interactive demos that showcase novel methods, devices, or
+                        applications of AI for neural and physiological data. The goal of the demo session is to inspire
+                        attendees, foster hands-on learning, and highlight the real-world impact of advances in the
+                        field.
+                    </p>
+
+                    <h4 class="mb-3">We Especially Encourage:</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Real-time systems that decode or
+                                    visualize biosignal data</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Demonstrations of new recording
+                                    hardware or wearable devices</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Prototypes of clinical or consumer
+                                    neurotechnology</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Interactive data visualization tools
+                                </li>
+                                <li><i class="fas fa-check text-success me-2"></i>Software tools for large-scale
+                                    biosignal analysis</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Brain-computer interface
+                                    demonstrations
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4 class="mb-3">Submission Guidelines</h4>
+                    <div class="mb-4">
+                        <h5><i class="fas fa-file-alt me-2" style="font-size: 0.9rem;"></i>Format and Length</h5>
+                        <p class="mb-3">Demo submissions should be <strong>500 words or fewer</strong> and submitted via
+                            <strong>Google Forms</strong> (link will be provided upon workshop acceptance).
+                        </p>
+
+                        <h5><i class="fas fa-cogs me-2" style="font-size: 0.9rem;"></i>Required Information</h5>
+                        <p class="mb-3">Include system description, demo goals, technical requirements, and setup needs
+                            for the venue.</p>
+
+                        <h5><i class="fas fa-laptop me-2" style="font-size: 0.9rem;"></i>Technical Setup</h5>
+                        <p class="mb-0">Demos will run parallel to the morning poster session. Please specify any
+                            special equipment or space requirements.</p>
+                    </div>
+
+                    <!-- Demo Submission Details Box -->
+                    <div class="demo-dates-box">
+                        <h5><i class="fas fa-calendar-alt me-2"></i>Demo Submission Timeline</h5>
+                        <div class="dates-grid">
+                            <div class="date-item">
+                                <strong>Demo Submission Deadline:</strong> August 22, 2025
+                            </div>
+                            <div class="date-item">
+                                <strong>Demo Notification:</strong> September 22, 2025
+                            </div>
+                            <div class="date-item">
+                                <strong>Setup Instructions Due:</strong> October 15, 2025
+                            </div>
+                            <div class="date-item">
+                                <strong>Demo Session:</strong> December 2025
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Awards Section -->
+    <section id="travel-awards" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Travel Awards</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <p class="mb-4">
+                        We are committed to supporting researchers from diverse backgrounds and institutions to
+                        attend our workshop. Travel awards will be available to help cover registration and
+                        travel expenses for qualifying participants.
+                    </p>
+
+                    <p class="mb-4">Priority will be given to students, postdocs, and researchers from
+                        underrepresented groups or institutions with limited funding.</p>
+
+                    <div class="alert">
+                        <strong>Application Details:</strong> More details about travel award eligibility, application
+                        procedures, and deadlines will be shared closer to the workshop.
+                    </div>
+
+                    <p class="text-muted text-center mt-3 mb-0">
+                        <small></small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Sponsors</h2>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="sponsor-card text-center">
+                        <img src="assets/meta.png" class="sponsor-logo" alt="Meta">
+                        <h5 class="sponsor-name mt-3">Meta</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="sponsor-card text-center">
+                        <img src="assets/arni.png" class="sponsor-logo" alt="ARNI">
+                        <h5 class="sponsor-name mt-3">ARNI</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="sponsor-card text-center">
+                        <img src="assets/sophont.png" class="sponsor-logo" alt="Sophont">
+                        <h5 class="sponsor-name mt-3">Sophont</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white text-center">
+        <div class="container">
+            <p>&copy; 2025 Mehdi Azabou. All rights reserved.</p>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="biosignal-animation.js"></script>
+</body>
+
+</html>
