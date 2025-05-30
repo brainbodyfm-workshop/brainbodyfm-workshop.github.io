@@ -27,7 +27,34 @@ class BiosignalAnimation {
             ]
         };
 
+        // Create shuffled icon sequences for each row
+        this.iconSequences = [];
         this.init();
+    }
+
+    // Helper function to shuffle array
+    shuffleArray(array) {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    }
+
+    // Create a randomized but distributed sequence of icons
+    createIconSequence(length) {
+        const sequence = [];
+        const iconCount = this.config.icons.length;
+
+        // Create multiple shuffled copies of the icon array
+        const copies = Math.ceil(length / iconCount);
+        for (let i = 0; i < copies; i++) {
+            sequence.push(...this.shuffleArray(this.config.icons));
+        }
+
+        // Trim to exact length needed
+        return sequence.slice(0, length);
     }
 
     init() {
@@ -56,26 +83,30 @@ class BiosignalAnimation {
             pointer-events: none;
         `;
 
+        // Calculate how many icons we need to fill the screen plus buffer
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        const diagonal = Math.sqrt(screenWidth * screenWidth + screenHeight * screenHeight);
+        const rotationBuffer = diagonal * 0.6;
+        const totalWidth = diagonal + rotationBuffer;
+        const iconsNeeded = Math.ceil(totalWidth / this.config.iconSpacing) + 10;
+
+        // Create a randomized icon sequence for this row
+        const iconSequence = this.createIconSequence(iconsNeeded);
+        this.iconSequences[index] = iconSequence;
+
         // Create row data with consistent speed
         const rowData = {
             element: row,
             icons: [],
-            speed: this.config.speed, // Same speed for all rows
-            offset: (index % 2) * (this.config.iconSpacing / 2) // Alternate offset for staggered pattern
+            speed: this.config.speed,
+            offset: (index % 2) * (this.config.iconSpacing / 2),
+            iconSequence: iconSequence
         };
 
-        // Calculate how many icons we need to fill the screen plus buffer
-        // Account for rotation by using diagonal + extra buffer
-        const screenWidth = window.innerWidth;
-        const screenHeight = window.innerHeight;
-        const diagonal = Math.sqrt(screenWidth * screenWidth + screenHeight * screenHeight);
-        const rotationBuffer = diagonal * 0.6; // Buffer for rotation
-        const totalWidth = diagonal + rotationBuffer;
-        const iconsNeeded = Math.ceil(totalWidth / this.config.iconSpacing) + 10; // More buffer icons
-
-        // Create icons for this row
+        // Create icons for this row using the randomized sequence
         for (let i = 0; i < iconsNeeded; i++) {
-            const iconData = this.createIcon(i, rowData.offset);
+            const iconData = this.createIcon(i, rowData.offset, iconSequence[i]);
             row.appendChild(iconData.element);
             rowData.icons.push(iconData);
         }
@@ -84,9 +115,8 @@ class BiosignalAnimation {
         this.rows.push(rowData);
     }
 
-    createIcon(index, baseOffset) {
+    createIcon(index, baseOffset, iconSrc) {
         const img = document.createElement('img');
-        const iconSrc = this.config.icons[index % this.config.icons.length];
 
         img.src = iconSrc;
         img.className = 'biosignal-icon-js';
@@ -108,33 +138,33 @@ class BiosignalAnimation {
             element: img,
             currentX: startX,
             originalIndex: index,
-            floatOffset: Math.random() * Math.PI * 2, // For floating animation
-            floatSpeed: 0.015 + Math.random() * 0.005 // Smaller variation in float speed
+            floatOffset: Math.random() * Math.PI * 2,
+            floatSpeed: 0.015 + Math.random() * 0.005
         };
     }
 
     updatePositions() {
-        const time = Date.now() * 0.001; // Convert to seconds
+        const time = Date.now() * 0.001;
         const screenWidth = window.innerWidth;
         const screenHeight = window.innerHeight;
 
-        // Calculate the actual visible area accounting for rotation
         const diagonal = Math.sqrt(screenWidth * screenWidth + screenHeight * screenHeight);
-        // Much larger reset point to ensure complete coverage
-        const resetPoint = diagonal * 1.0; // Icons travel the full diagonal
-        const startPoint = -this.config.iconSpacing * 5; // Starting point further off-screen
+        const resetPoint = diagonal * 1.0;
+        const startPoint = -this.config.iconSpacing * 5;
 
-        this.rows.forEach(row => {
-            row.icons.forEach(icon => {
+        this.rows.forEach((row, rowIndex) => {
+            row.icons.forEach((icon, iconIndex) => {
                 // Update horizontal position with consistent speed
                 icon.currentX += row.speed;
 
                 // Reset position when icon goes far enough off screen
-                // Use a seamless reset that maintains the spacing pattern
                 if (icon.currentX > resetPoint) {
-                    // Find the leftmost icon in this row to maintain proper spacing
                     const leftmostX = Math.min(...row.icons.map(i => i.currentX));
                     icon.currentX = leftmostX - this.config.iconSpacing;
+
+                    // When resetting, assign a new random icon from the sequence
+                    const newIconIndex = (iconIndex + row.icons.length) % row.iconSequence.length;
+                    icon.element.src = row.iconSequence[newIconIndex];
                 }
 
                 // Calculate subtle floating animation
@@ -174,7 +204,6 @@ class BiosignalAnimation {
     }
 
     handleResize() {
-        // Don't stop the animation, just add more icons if needed
         const screenWidth = window.innerWidth;
         const screenHeight = window.innerHeight;
         const diagonal = Math.sqrt(screenWidth * screenWidth + screenHeight * screenHeight);
@@ -182,10 +211,17 @@ class BiosignalAnimation {
         const totalWidth = diagonal + rotationBuffer;
         const iconsNeeded = Math.ceil(totalWidth / this.config.iconSpacing) + 10;
 
-        this.rows.forEach(row => {
+        this.rows.forEach((row, rowIndex) => {
             // Add more icons if we don't have enough for the new screen size
             while (row.icons.length < iconsNeeded) {
-                const iconData = this.createIcon(row.icons.length, row.offset);
+                // Extend the icon sequence if needed
+                if (row.iconSequence.length <= row.icons.length) {
+                    const additionalIcons = this.createIconSequence(iconsNeeded - row.iconSequence.length);
+                    row.iconSequence.push(...additionalIcons);
+                }
+
+                const iconSrc = row.iconSequence[row.icons.length];
+                const iconData = this.createIcon(row.icons.length, row.offset, iconSrc);
                 row.element.appendChild(iconData.element);
                 row.icons.push(iconData);
             }
