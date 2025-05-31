@@ -23,7 +23,14 @@ class BiosignalAnimation {
                 'assets/modalities/ieeg.png',
                 'assets/modalities/wearable.png',
                 'assets/modalities/calcium.png',
-                'assets/modalities/microarray.png'
+                'assets/modalities/microarray.png',
+                'assets/modalities/eda.png',
+                'assets/modalities/eog.png',
+                'assets/modalities/ppg.png',
+                'assets/modalities/psg.png',
+                'assets/modalities/seeg.png',
+                'assets/modalities/monkey.png',
+                'assets/modalities/c-elegans.png',
             ]
         };
 
