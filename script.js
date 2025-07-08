@@ -99,4 +99,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize carousel
     updateCarousel();
+
+    // Smart dropdown alignment for Updates
+    const updatesBtn = document.querySelector('.updates-btn');
+    const updatesDropdown = document.querySelector('.updates-dropdown');
+
+    if (updatesBtn && updatesDropdown) {
+        function positionDropdown() {
+            // Reset any previous transform
+            updatesDropdown.style.transform = '';
+
+            // Get the button's position relative to the viewport
+            const buttonRect = updatesBtn.getBoundingClientRect();
+            const dropdownRect = updatesDropdown.getBoundingClientRect();
+            const viewportWidth = window.innerWidth;
+
+            // Calculate the overflow
+            const overflowRight = dropdownRect.right - viewportWidth;
+            const overflowLeft = dropdownRect.left;
+
+            let shift = 0;
+            if (overflowRight > 0) {
+                shift = -overflowRight - 8; // 8px padding
+            } else if (overflowLeft < 0) {
+                shift = -overflowLeft + 8; // 8px padding
+            }
+            if (shift !== 0) {
+                updatesDropdown.style.transform = `translateX(${shift}px)`;
+            } else {
+                updatesDropdown.style.transform = '';
+            }
+        }
+
+        updatesBtn.addEventListener('click', function () {
+            // Small delay to ensure dropdown is visible before positioning
+            setTimeout(positionDropdown, 10);
+        });
+
+        // Also handle window resize to reposition dropdown if needed
+        window.addEventListener('resize', function () {
+            if (updatesDropdown.classList.contains('show')) {
+                positionDropdown();
+            }
+        });
+    }
+
 }); 

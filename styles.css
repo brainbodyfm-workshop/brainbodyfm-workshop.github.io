@@ -1,6 +1,23 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     scroll-behavior: smooth;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sticky footer styles */
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+/* Override Bootstrap container max-width */
+.container {
+    max-width: 1000px !important;
 }
 
 section {
@@ -68,7 +85,7 @@ section {
 }
 
 .card-img-top {
-    max-width: 150px;
+    width: 150px;
     height: 150px;
     margin: 1.5rem auto 1rem;
     border-radius: 0;
@@ -296,7 +313,7 @@ header .lead>span {
 
 .navbar {
     background-color: #222 !important;
-    padding: 1rem 0;
+    padding: 1rem 10px;
     width: 100%;
 }
 
@@ -309,7 +326,8 @@ header .lead>span {
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.8);
     transition: color 0.3s ease;
-    padding: 0.5rem 1rem;
+    /* padding: 0.5rem 1rem; */
+    padding-top: 0;
     white-space: nowrap;
 }
 
@@ -476,6 +494,7 @@ section:not(header) {
 #sponsors h2,
 #videos h2,
 #abstract h2,
+#community h2,
 #steering-committee h2 {
     font-size: 2.4rem;
     font-weight: 600;
@@ -491,6 +510,7 @@ section:not(header) {
 #organizers h2::after,
 #videos h2::after,
 #abstract h2::after,
+#community h2::after,
 #sponsors h2::after,
 #steering-committee h2::after {
     content: '';
@@ -505,11 +525,11 @@ section:not(header) {
 
 @media (min-width: 1200px) {
 
-    #speakers-row .col-lg-1-7,
-    #organizers-row .col-lg-1-7,
-    #steering-row .col-lg-1-7 {
-        flex: 0 0 14.2857142857%;
-        max-width: 14.2857142857%;
+    #speakers-row .col-lg-1-5,
+    #organizers-row .col-lg-1-5,
+    #steering-row .col-lg-1-5 {
+        flex: 0 0 20%;
+        max-width: 20%;
     }
 }
 
@@ -1054,7 +1074,7 @@ footer p {
     }
 
     .navbar-dark .navbar-nav {
-        gap: 8px;
+        gap: 10px;
     }
 }
 
@@ -1159,9 +1179,9 @@ footer p {
 }
 
 @media (min-width: 992px) {
-    .col-lg-1-7 {
+    .col-lg-1-5 {
         flex: 0 0 auto;
-        width: 14.2857142857%;
+        width: 20%;
     }
 
     .col-lg-2-4 {
@@ -1371,15 +1391,6 @@ footer p {
     padding: 1rem;
 }
 
-/* Travel Awards Section - Simple Red Theme */
-#travel-awards .alert {
-    background-color: #f8d7da;
-    border: 1px solid #dc3545;
-    color: #721c24;
-    border-radius: 6px;
-    padding: 1rem;
-}
-
 /* Add styling for Call for Papers, Call for Demos, and Travel Awards section titles */
 #call-for-papers h2,
 #call-for-demos h2,
@@ -1391,58 +1402,71 @@ footer p {
     position: relative;
 }
 
-/* Call for Papers - Blue accent */
+/* Call for Papers specific styling - smaller and left-aligned */
 #call-for-papers h2 {
-    color: #1976d2;
+    font-size: 1.8rem !important;
+    text-align: left !important;
+    margin-bottom: 2rem !important;
+}
+
+/* Call for Demos specific styling - smaller and left-aligned */
+#call-for-demos h2 {
+    font-size: 1.8rem !important;
+    text-align: left !important;
+    margin-bottom: 2rem !important;
+}
+
+/* Travel Awards specific styling - smaller and left-aligned */
+#travel-awards h2 {
+    font-size: 1.8rem !important;
+    text-align: left !important;
+    margin-bottom: 2rem !important;
+}
+
+/* Sponsors title styling within travel awards page */
+.sponsors-title {
+    font-size: 1.8rem !important;
+    text-align: left !important;
+    margin-bottom: 2rem !important;
+    margin-top: 3rem !important;
+}
+
+/* Vibrant red styling for Call for Papers page - only for checkmarks */
+#call-for-papers .fas.fa-check.text-danger {
+    color: #ff0000 !important;
+}
+
+/* Vibrant red styling for Call for Demos page - only for checkmarks */
+#call-for-demos .fas.fa-check.text-danger {
+    color: #ff0000 !important;
+}
+
+/* Vibrant red styling for Travel Awards page - only for checkmarks */
+#travel-awards .fas.fa-check.text-danger {
+    color: #ff0000 !important;
 }
 
 #call-for-papers h2::after {
-    content: '';
-    position: absolute;
-    bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: #1976d2;
-}
-
-/* Call for Demos - Green accent */
-#call-for-demos h2 {
-    color: #2e7d32;
+    display: none;
 }
 
 #call-for-demos h2::after {
-    content: '';
-    position: absolute;
-    bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: #2e7d32;
+    display: none;
 }
 
 /* Travel Awards - Red accent */
 #travel-awards h2 {
-    color: #dc3545;
+    color: #1a1a1a;
 }
 
 #travel-awards h2::after {
-    content: '';
-    position: absolute;
-    bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: #dc3545;
+    display: none;
 }
 
 .sponsor-logo {
-    height: 80px;
+    height: 60px;
     width: auto;
-    max-width: 200px;
+    max-width: 150px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -1456,6 +1480,7 @@ footer p {
     border: 1px solid #e9ecef;
     border-radius: 8px;
     transition: box-shadow 0.3s ease;
+    text-align: left;
 }
 
 .sponsor-card:hover {
@@ -1483,5 +1508,1001 @@ footer p {
 
     .sponsor-card {
         padding: 1rem;
+    }
+}
+
+/* Updates Dropdown Styles */
+.updates-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.live-dot-small {
+    width: 6px;
+    height: 6px;
+    background-color: #ff4444;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(255, 68, 68, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 68, 68, 0);
+    }
+}
+
+.updates-dropdown {
+    width: 400px;
+    max-width: 90vw;
+    padding: 0;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    background: white;
+    margin-top: 0.5rem;
+}
+
+/* Smart dropdown alignment - will be applied via JavaScript */
+.updates-dropdown.dropdown-menu-end {
+    right: 0;
+    left: auto;
+}
+
+.updates-dropdown.dropdown-menu-start {
+    left: 0;
+    right: auto;
+}
+
+/* Custom positioning for centering */
+.updates-dropdown {
+    position: absolute !important;
+    right: 0 !important;
+    left: auto !important;
+}
+
+.updates-content {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 1rem 1.5rem;
+}
+
+.update-item {
+    display: flex;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.update-item:last-child {
+    margin-bottom: 0;
+}
+
+.update-date {
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+}
+
+.date-badge-small {
+    background: #f8f9fa;
+    color: #333;
+    border-radius: 6px;
+    padding: 0.4rem;
+    text-align: center;
+    min-width: 45px;
+    border: 1px solid #e9ecef;
+}
+
+.date-badge-small .month {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #667eea;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.date-badge-small .day {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #333;
+    line-height: 1;
+}
+
+.update-content {
+    flex: 1;
+}
+
+.update-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #e9ecef;
+    transition: background-color 0.2s ease;
+}
+
+.update-card:hover {
+    background: #e9ecef;
+}
+
+.update-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.update-title {
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
+    flex: 1;
+    line-height: 1.3;
+}
+
+.update-tag {
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+}
+
+.update-tag.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.update-tag.info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+.update-tag.warning {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.update-text {
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.update-meta {
+    font-size: 0.75rem;
+}
+
+/* Responsive Design for Updates Dropdown */
+@media (max-width: 768px) {
+    .updates-dropdown {
+        width: 320px;
+        max-width: calc(100vw - 2rem);
+    }
+
+    .updates-content {
+        padding: 0.75rem 1rem;
+    }
+
+    .update-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .update-title {
+        font-size: 0.85rem;
+    }
+
+    .update-tag {
+        align-self: flex-start;
+        margin-left: 0;
+    }
+
+    .date-badge-small {
+        min-width: 40px;
+        padding: 0.3rem;
+    }
+
+    .date-badge-small .month {
+        font-size: 0.55rem;
+    }
+
+    .date-badge-small .day {
+        font-size: 0.8rem;
+    }
+}
+
+/* Deadline Badge Styles */
+.deadline-badge {
+    display: block;
+    background: #ff4444;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 0.2rem;
+    line-height: 1;
+    text-align: center;
+    animation: pulse 2s infinite;
+    box-shadow: 0 1px 3px rgba(255, 68, 68, 0.3);
+}
+
+/* Travel Awards Badge - Gray */
+.travel-badge {
+    background: #6c757d;
+    animation: none;
+    box-shadow: 0 1px 3px rgba(108, 117, 125, 0.3);
+}
+
+/* Navigation Separator */
+.nav-separator {
+    width: 1px;
+    height: 80px;
+    background-color: #6c757d;
+    margin: 0 0.5rem;
+    align-self: center;
+    opacity: 0.6;
+}
+
+/* Navigation Group Label */
+.nav-group-label {
+    color: #6c757d;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0.5rem 0;
+    text-align: center;
+    opacity: 0.8;
+
+}
+
+/* Navigation Overview Group */
+.nav-overview-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Navigation Submission Group */
+.nav-submission-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive adjustments for badges */
+@media (max-width: 768px) {
+    .deadline-badge {
+        margin-left: 0.25rem;
+        padding: 0.15rem 0.4rem;
+    }
+
+    .badge-text {
+        font-size: 0.55rem;
+    }
+
+    .badge-icon {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 1035px) {
+    .nav-separator {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .deadline-badge {
+        margin-left: 0.15rem;
+        padding: 0.1rem 0.3rem;
+    }
+
+    .badge-text {
+        font-size: 0.5rem;
+    }
+
+    .badge-icon {
+        font-size: 0.55rem;
+    }
+
+    .nav-separator {
+        display: none;
+    }
+}
+
+/* Navigation Group Block for vertical alignment */
+.nav-group-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0.75rem 0 0.75rem;
+}
+
+.nav-group-block .nav-group-label {
+    text-align: left;
+    margin-bottom: 0.2rem;
+    margin-left: 0;
+    padding-left: 0.5rem;
+}
+
+
+
+.navbar-nav.mx-auto {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-overview-group,
+.nav-submission-group {
+    width: auto;
+    justify-content: center;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.nav-overview-group .nav-link,
+.nav-submission-group .nav-link {
+    padding: 0.5rem 1rem;
+}
+
+/* Simple Timeline Styles */
+/* Clean Timeline Styles */
+.timeline-container {
+    margin: 0 0 3rem 0;
+    padding: 0 0 2rem 0;
+}
+
+.timeline-track {
+    position: relative;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    margin: 0 0 3rem 0;
+    overflow: visible;
+}
+
+.timeline-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #000;
+    border-radius: 4px;
+    transition: width 0.8s ease;
+}
+
+.timeline-milestones {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    top: -6px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.timeline-milestone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    position: relative;
+}
+
+.milestone-marker {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #e9ecef;
+    position: relative;
+    z-index: 4;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.milestone-marker:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.milestone-marker.upcoming {
+    background: #000;
+    border-color: #000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.milestone-marker.current {
+    background: #dc3545;
+    border-color: #dc3545;
+    animation: current-milestone 3s ease-in-out infinite;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.milestone-content {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.milestone-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+
+.milestone-date {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.milestone-status {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.milestone-status.upcoming {
+    background: #f8f9fa;
+    color: #333;
+    border: 1px solid #e9ecef;
+    opacity: 0;
+}
+
+/* Make the first upcoming status visible */
+.timeline-milestone:first-child .milestone-status.upcoming {
+    opacity: 1;
+}
+
+@keyframes current-milestone {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+    }
+
+    25% {
+        transform: scale(1.1);
+        box-shadow: 0 4px 16px rgba(220, 53, 69, 0.5);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(220, 53, 69, 0.7);
+    }
+
+    75% {
+        transform: scale(1.15);
+        box-shadow: 0 8px 24px rgba(220, 53, 69, 0.6);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+    }
+}
+
+
+
+/* Mobile Timeline List Styles */
+.mobile-timeline-list {
+    display: none;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.mobile-timeline-list h4 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.mobile-milestone {
+    position: relative;
+    padding: 1rem 0 1rem 2rem;
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 0;
+}
+
+.mobile-milestone:last-child {
+    border-bottom: none;
+}
+
+.mobile-milestone::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #6c757d;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #e9ecef;
+}
+
+.mobile-milestone.current::before {
+    background-color: #dc3545;
+    box-shadow: 0 0 0 2px #dc3545;
+    animation: current-milestone 3s ease-in-out infinite;
+}
+
+.mobile-milestone-content {
+    margin-left: 0.5rem;
+}
+
+.mobile-milestone-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+.mobile-milestone-date {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.mobile-milestone-status {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: #f8f9fa;
+    color: #333;
+    border: 1px solid #e9ecef;
+}
+
+.mobile-milestone.current .mobile-milestone-status {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #dc3545;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .timeline-container {
+        display: none;
+    }
+
+    .mobile-timeline-list {
+        display: block;
+    }
+}
+
+/* Call for Papers Page - Reduced Font Sizes */
+#call-for-papers .lead {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+#call-for-papers ul.lead {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+#call-for-papers ul.lead li {
+    margin-bottom: 0.4rem;
+}
+
+#call-for-papers h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+#call-for-papers h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#call-for-papers h5 span {
+    font-size: 1rem !important;
+    line-height: 1.5;
+}
+
+#call-for-papers .card-text.lead {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#call-for-papers .card-title {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    #call-for-papers .lead {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    #call-for-papers ul.lead {
+        font-size: 0.9rem;
+    }
+
+    #call-for-papers h4 {
+        font-size: 1.2rem;
+    }
+
+    #call-for-papers h5 {
+        font-size: 1rem;
+    }
+
+    #call-for-papers h5 span {
+        font-size: 0.95rem !important;
+    }
+
+    #call-for-papers .card-text.lead {
+        font-size: 0.95rem;
+    }
+
+    #call-for-papers .card-title {
+        font-size: 0.95rem;
+    }
+}
+
+/* Call for Demos Page - Reduced Font Sizes */
+#call-for-demos .lead {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+#call-for-demos ul.lead {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+#call-for-demos ul.lead li {
+    margin-bottom: 0.4rem;
+}
+
+#call-for-demos h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+#call-for-demos h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#call-for-demos h5 span {
+    font-size: 1rem !important;
+    line-height: 1.5;
+}
+
+#call-for-demos .card-text.lead {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#call-for-demos .card-title {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    #call-for-demos .lead {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    #call-for-demos ul.lead {
+        font-size: 0.9rem;
+    }
+
+    #call-for-demos h4 {
+        font-size: 1.2rem;
+    }
+
+    #call-for-demos h5 {
+        font-size: 1rem;
+    }
+
+    #call-for-demos h5 span {
+        font-size: 0.95rem !important;
+    }
+
+    #call-for-demos .card-text.lead {
+        font-size: 0.95rem;
+    }
+
+    #call-for-demos .card-title {
+        font-size: 0.95rem;
+    }
+}
+
+/* Travel Awards Page - Reduced Font Sizes */
+#travel-awards .lead {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+#travel-awards ul.lead {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+#travel-awards ul.lead li {
+    margin-bottom: 0.4rem;
+}
+
+#travel-awards h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+#travel-awards h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#travel-awards h5 span {
+    font-size: 1rem !important;
+    line-height: 1.5;
+}
+
+#travel-awards .card-text.lead {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#travel-awards .card-title {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    #travel-awards .lead {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    #travel-awards ul.lead {
+        font-size: 0.9rem;
+    }
+
+    #travel-awards h4 {
+        font-size: 1.2rem;
+    }
+
+    #travel-awards h5 {
+        font-size: 1rem;
+    }
+
+    #travel-awards h5 span {
+        font-size: 0.95rem !important;
+    }
+
+    #travel-awards .card-text.lead {
+        font-size: 0.95rem;
+    }
+
+    #travel-awards .card-title {
+        font-size: 0.95rem;
+    }
+}
+
+#call-for-papers .modality-card {
+    min-height: 120px;
+    padding: 0.75rem !important;
+}
+
+#call-for-papers .modality-card h6 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+#call-for-papers .modality-card small {
+    font-size: 0.8rem;
+}
+
+#call-for-papers .modality-image {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.5rem !important;
+}
+
+@media (max-width: 768px) {
+    #call-for-papers .modality-card {
+        min-height: 100px;
+        padding: 0.5rem !important;
+    }
+
+    #call-for-papers .modality-card h6 {
+        font-size: 0.9rem;
+    }
+
+    #call-for-papers .modality-card small {
+        font-size: 0.75rem;
+    }
+
+    #call-for-papers .modality-image {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Community Card Styles */
+.community-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.community-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.community-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: #667eea;
+}
+
+.community-card:hover::before {
+    opacity: 1;
+}
+
+.community-card .card-body {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.community-card:hover .card-body {
+    transform: translateY(-2px);
+}
+
+.community-icon {
+    transition: all 0.3s ease;
+}
+
+.community-card:hover .community-icon {
+    transform: scale(1.1);
+}
+
+.community-card:hover .community-icon i {
+    /* Shadow animation removed */
+}
+
+.community-card .card-title {
+    transition: color 0.3s ease;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.community-card:hover .card-title {
+    color: #667eea;
+}
+
+.community-card .card-text {
+    transition: color 0.3s ease;
+    line-height: 1.6;
+}
+
+.community-card:hover .card-text {
+    color: #495057;
+}
+
+/* Add a subtle arrow indicator on hover */
+.community-card::after {
+    content: '→';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #667eea;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+.community-card:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsive adjustments for community cards */
+@media (max-width: 768px) {
+    .community-card:hover {
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .community-card::after {
+        font-size: 1rem;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .community-card:hover {
+        transform: translateY(-2px) scale(1.005);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .community-card .card-title {
+        font-size: 1.1rem;
+    }
+
+    .community-card .card-text {
+        font-size: 0.9rem;
     }
 }

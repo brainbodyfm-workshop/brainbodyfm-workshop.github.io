@@ -37,17 +37,86 @@
 
 <body>
     <!-- Navigation Menu -->
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <div class="container">
-            <div class="navbar-nav mx-auto">
-                <a class="nav-link" href="#abstract">Abstract</a>
-                <a class="nav-link" href="#speakers">Speakers</a>
-                <a class="nav-link" href="#organizers">Organizers</a>
-                <a class="nav-link" href="#schedule">Schedule</a>
-                <a class="nav-link" href="#call-for-papers">Call for Papers</a>
-                <a class="nav-link" href="#call-for-demos">Call for Demos</a>
-                <a class="nav-link" href="#travel-awards">Travel Awards</a>
-                <a class="nav-link" href="#sponsors">Sponsors</a>
+    <nav class="navbar navbar-expand navbar-dark bg-dark sticky-top">
+        <div class="navbar-nav mx-auto">
+            <div class="nav-group-block">
+                <div class="nav-group-label">Workshop Overview</div>
+                <div class="nav-overview-group">
+                    <a class="nav-link" href="#home">Overview<span class="deadline-badge"
+                            style="opacity:0;">TBD</span></a>
+                    <a class="nav-link" href="#speakers">Speakers<span class="deadline-badge"
+                            style="opacity:0;">TBD</span></a>
+                    <a class="nav-link" href="#organizers">Organizers<span class="deadline-badge"
+                            style="opacity:0;">TBD</span></a>
+                    <a class="nav-link" href="#schedule">Schedule<span class="deadline-badge"
+                            style="opacity:0;">TBD</span></a>
+                    <a class="nav-link" href="#community">Community<span class="deadline-badge"
+                            style="opacity:0;">TBD</span></a>
+                    <!-- <a class="nav-link" href="#sponsors">Sponsors<span class="deadline-badge"
+                                style="opacity:0;">TBD</span></a> -->
+
+                </div>
+            </div>
+            <div class="nav-separator"></div>
+            <div class="nav-group-block">
+                <div class="nav-group-label">Submit to the workshop</div>
+                <div class="nav-submission-group">
+                    <a class="nav-link" href="call-for-papers.html">Call for Papers<span class="deadline-badge">August
+                            22, 2025</span></a>
+                    <a class="nav-link" href="call-for-demos.html">Call for Demos<span class="deadline-badge">August
+                            22, 2025</span></a>
+                    <a class="nav-link" href="travel-awards.html">Travel Awards<span
+                            class="deadline-badge travel-badge">TBD</span></a>
+                    <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- <div class="nav-separator"></div> -->
+                    <!-- <div class="nav-group-block"> -->
+                    <!-- <div class="nav-group-label" style="opacity:0;">Updates</div> -->
+                    <!-- <div> -->
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle updates-btn" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <span class="live-dot-small"></span>
+                            Updates
+                        </a>
+                        <span class="deadline-badge" style="opacity:0;">TBD</span>
+                        <div class="dropdown-menu updates-dropdown">
+                            <div class="updates-content">
+                                <div class="update-item">
+                                    <div class="update-date">
+                                        <div class="date-badge-small">
+                                            <span class="month">JUL</span>
+                                            <span class="day">04</span>
+                                        </div>
+                                    </div>
+                                    <div class="update-content">
+                                        <div class="update-card">
+                                            <div class="update-header">
+                                                <h6 class="update-title">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    Workshop Accepted at NeurIPS 2025!
+                                                </h6>
+                                                <span class="update-tag success">Accepted</span>
+                                            </div>
+                                            <p class="update-text">
+                                                We are excited to announce that our workshop "Foundation Models for
+                                                the
+                                                Brain and Body"
+                                                has been officially accepted for NeurIPS 2025!
+                                            </p>
+                                            <div class="update-meta">
+                                                <small class="text-muted">
+                                                    <i class="fas fa-clock me-1"></i>
+                                                    July 4, 2025
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -56,34 +125,6 @@
     <header id="home" class="py-5 header-extra-padding text-center">
         <!-- Animated Biosignal Background -->
         <div class="biosignal-background">
-            <div class="biosignal-row">
-                <img src="assets/modalities/eeg.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/fmri.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/emg.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/meg.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/ecg.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/ieeg.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/wearable.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/calcium.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/microarray.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/eda.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/eog.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/ppg.png" class="biosignal-icon" alt="">
-            </div>
-            <div class="biosignal-row">
-                <img src="assets/modalities/eeg.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/fmri.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/emg.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/meg.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/ecg.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/ieeg.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/wearable.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/calcium.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/microarray.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/eda.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/eog.png" class="biosignal-icon" alt="">
-                <img src="assets/modalities/ppg.png" class="biosignal-icon" alt="">
-            </div>
             <div class="biosignal-row">
                 <img src="assets/modalities/eeg.png" class="biosignal-icon" alt="">
                 <img src="assets/modalities/fmri.png" class="biosignal-icon" alt="">
@@ -203,7 +244,7 @@
         <div class="container">
             <h2 class="text-center mb-4">Invited Speakers</h2>
             <div class="row justify-content-center" id="speakers-row">
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 speaker-card">
                         <img src="assets/banville.jpg" class="card-img-top" alt="Hubert Banville">
                         <div class="card-body">
@@ -213,7 +254,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 speaker-card">
                         <img src="assets/zhou.jpg" class="card-img-top" alt="Juan Helen Zhou">
                         <div class="card-body">
@@ -223,7 +264,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 speaker-card">
                         <img src="assets/guan.jpg" class="card-img-top" alt="Cuntai Guan">
                         <div class="card-body">
@@ -233,7 +274,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 speaker-card">
                         <img src="assets/sapiro.jpg" class="card-img-top" alt="Guillermo Sapiro">
                         <div class="card-body">
@@ -243,7 +284,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 speaker-card">
                         <img src="assets/eva.png" class="card-img-top" alt="Eva Dyer">
                         <div class="card-body">
@@ -262,7 +303,7 @@
         <div class="container">
             <h2 class="text-center mb-4">Organizers</h2>
             <div class="row" id="organizers-row">
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 organizer-card">
                         <img src="assets/mehdi.jpg" class="card-img-top" alt="Mehdi Azabou">
                         <div class="card-body">
@@ -272,7 +313,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 organizer-card">
                         <img src="assets/cole.png" class="card-img-top" alt="Cole Hurwitz">
                         <div class="card-body">
@@ -282,7 +323,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 organizer-card">
                         <img src="assets/sophia.jpg" class="card-img-top" alt="Sophia Sanborn">
                         <div class="card-body">
@@ -292,7 +333,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 organizer-card">
                         <img src="assets/sana.png" class="card-img-top" alt="Sana Tonekaboni">
                         <div class="card-body">
@@ -302,7 +343,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 organizer-card">
                         <img src="assets/paul.jpg" class="card-img-top" alt="Paul Scotti">
                         <div class="card-body">
@@ -312,7 +353,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 organizer-card">
                         <img src="assets/nanda.jpg" class="card-img-top" alt="Nanda H Krishna">
                         <div class="card-body">
@@ -322,7 +363,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 organizer-card">
                         <img src="assets/guetschel.jpeg" class="card-img-top" alt="Pierre Guetschel">
                         <div class="card-body">
@@ -341,7 +382,7 @@
                 </div>
             </div>
             <div class="row justify-content-center" id="steering-row">
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 organizer-card">
                         <img src="assets/gramfort.jpg" class="card-img-top" alt="Alexandre Gramfort">
                         <div class="card-body">
@@ -351,7 +392,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 organizer-card">
                         <img src="assets/paninski.png" class="card-img-top" alt="Liam Paninski">
                         <div class="card-body">
@@ -361,7 +402,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1-7 col-md-4 col-sm-6 mb-4">
+                <div class="col-lg-1-5 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 organizer-card">
                         <img src="assets/blake.png" class="card-img-top" alt="Blake Richards">
                         <div class="card-body">
@@ -536,233 +577,49 @@
         </div>
     </section>
 
-
-    <!-- Call for Papers Section -->
-    <section id="call-for-papers" class="py-5">
+    <!-- Community and Resources Section -->
+    <section id="community" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5">Call for Papers</h2>
+            <h2 class="text-center mb-5">Community</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <p class="lead mb-4">
-                        We invite submissions of novel research in neuroscience, biosignal analysis,
-                        and machine learning, with a focus on foundation models and representation learning for neural
-                        and physiological data.
-                    </p>
 
-                    <h4 class="mb-3">Relevant Topics Include:</h4>
                     <div class="row">
-                        <div class="col-md-6">
-                            <ul class="lead list-unstyled">
-                                <li><i class="fas fa-check text-primary me-2"></i>Large-scale pretraining on neural or
-                                    physiological signals</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Scaling laws for neural foundation
-                                    models</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Brain-computer interfaces and neural
-                                    decoding</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Self-supervised learning for
-                                    biosignals
-                                </li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Transfer learning across recording
-                                    modalities</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Wearable technology and real-world
-                                    deployment</li>
-                            </ul>
+                        <div class="col-lg-6 mb-4">
+                            <a href="https://discord.gg/kQNKA6B8ZC" target="_blank" class="text-decoration-none">
+                                <div class="card h-100 community-card">
+                                    <div class="card-body">
+                                        <div class="text-center mb-4">
+                                            <div class="community-icon mb-3">
+                                                <i class="fab fa-discord fa-3x text-primary"></i>
+                                            </div>
+                                            <h4 class="card-title">Join Our Discord Community</h4>
+                                        </div>
+                                        <p class="card-text" style="font-size: 1rem;">
+                                            Connect with researchers building foundation models for the brain. Share
+                                            ideas,
+                                            ask questions, and collaborate on projects.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="col-md-6">
-                            <ul class="lead list-unstyled">
-                                <li><i class="fas fa-check text-primary me-2"></i>Cross-subject and cross-task
-                                    generalization</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Multimodal integration of biosignals
-                                </li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Robust models for noisy biosignal data
-                                </li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Applications to mental health and
-                                    clinical diagnosis</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Neurotechnology and assistive devices
-                                </li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Interpretability of biosignal
-                                    representations</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <p class="lead mb-3">The topics listed above are not exhaustive. We encourage submissions that
-                        explore how machine learning can advance our understanding and
-                        analysis of neural and physiological signals in humans and animals.</p>
-
-                    <h4 class="mb-3 mt-4">Examples of Biosignals:</h4>
-                    <div class="row text-center mb-4">
-                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
-                            <div class="modality-card p-3 border rounded">
-                                <img src="assets/modalities/microarray.png" class="modality-image mb-2"
-                                    alt="Microarrays">
-                                <h6>Microarrays</h6>
-                                <small class="text-muted">Spikes, LFP</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
-                            <div class="modality-card p-3 border rounded">
-                                <img src="assets/modalities/eeg.png" class="modality-image mb-2" alt="EEG">
-                                <h6>EEG</h6>
-                                <small class="text-muted">Electroencephalography</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
-                            <div class="modality-card p-3 border rounded">
-                                <img src="assets/modalities/fmri.png" class="modality-image mb-2" alt="fMRI">
-                                <h6>fMRI</h6>
-                                <small class="text-muted">Functional MRI</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
-                            <div class="modality-card p-3 border rounded">
-                                <img src="assets/modalities/meg.png" class="modality-image mb-2" alt="EMG">
-                                <h6>EMG</h6>
-                                <small class="text-muted">Electromyography</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
-                            <div class="modality-card p-3 border rounded">
-                                <img src="assets/modalities/emg.png" class="modality-image mb-2" alt="MEG">
-                                <h6>MEG</h6>
-                                <small class="text-muted">Magnetoencephalography</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
-                            <div class="modality-card p-3 border rounded">
-                                <img src="assets/modalities/ecg.png" class="modality-image mb-2" alt="ECG">
-                                <h6>ECG</h6>
-                                <small class="text-muted">Electrocardiography</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
-                            <div class="modality-card p-3 border rounded">
-                                <img src="assets/modalities/ieeg.png" class="modality-image mb-2" alt="iEEG">
-                                <h6>iEEG</h6>
-                                <small class="text-muted">Intracranial EEG</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
-                            <div class="modality-card p-3 border rounded">
-                                <img src="assets/modalities/wearable.png" class="modality-image mb-2" alt="Wearable">
-                                <h6>Wearables</h6>
-                                <small class="text-muted">Wearable sensors</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
-                            <div class="modality-card p-3 border rounded">
-                                <img src="assets/modalities/calcium.png" class="modality-image mb-2" alt="Calcium">
-                                <h6>OPhys</h6>
-                                <small class="text-muted">Calcium imaging</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
-                            <div class="modality-card p-3 border rounded">
-                                <img src="assets/modalities/seeg.png" class="modality-image mb-2" alt="sEEG">
-                                <h6>sEEG</h6>
-                                <small class="text-muted">Stereotactic EEG</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
-                            <div class="modality-card p-3 border rounded">
-                                <img src="assets/modalities/eda.png" class="modality-image mb-2" alt="EDA">
-                                <h6>EDA</h6>
-                                <small class="text-muted">Electrodermal Activity</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
-                            <div class="modality-card p-3 border rounded">
-                                <img src="assets/modalities/eog.png" class="modality-image mb-2" alt="EOG">
-                                <h6>EOG</h6>
-                                <small class="text-muted">Electrooculography</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
-                            <div class="modality-card p-3 border rounded">
-                                <img src="assets/modalities/ppg.png" class="modality-image mb-2" alt="PPG">
-                                <h6>PPG</h6>
-                                <small class="text-muted">Photoplethysmography</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-4 col-md-4 col-sm-6 col-6 mb-3">
-                            <div class="modality-card p-3 border rounded">
-                                <img src="assets/modalities/psg.png" class="modality-image mb-2" alt="PSG">
-                                <h6>PSG</h6>
-                                <small class="text-muted">Polysomnography</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h4 class="mb-3">Submission Guidelines</h4>
-                    <div class="mb-4">
-                        <h5><i class="fas fa-file-alt me-2" style="font-size: 0.9rem;"></i>Format and Length</h5>
-                        <p class="mb-3" style="font-size: 1.2rem;">Submissions should be <strong>5 pages
-                                maximum</strong>
-                            (excluding references)
-                            using the <a href="https://media.neurips.cc/Conferences/NeurIPS2025/Styles.zip"
-                                target="_blank" class="text-decoration-none">NeurIPS 2025 LaTeX style</a>. All
-                            submissions will be made through <strong>OpenReview</strong> (link will be provided upon
-                            workshop acceptance).</p>
-
-                        <h5><i class="fas fa-user-secret me-2" style="font-size: 0.9rem;"></i>Anonymization</h5>
-                        <p class="mb-3" style="font-size: 1.2rem;">All submissions must be fully anonymized and cannot
-                            contain any identifying
-                            information that would violate our double-blind reviewing policy.</p>
-
-                        <h5><i class="fas fa-star me-2" style="font-size: 0.9rem;"></i>Novelty Requirement</h5>
-                        <p class="mb-3" style="font-size: 1.2rem;">We strongly discourage submissions of previously
-                            completed or published work.
-                        </p>
-
-                        <h5><i class="fas fa-microphone me-2" style="font-size: 0.9rem;"></i>Spotlight Presentations
-                        </h5>
-                        <p class="mb-0" style="font-size: 1.2rem;">The <strong>8 submissions</strong> will be selected
-                            for
-                            spotlight talks during the workshop.</p>
-                    </div>
-
-                    <!-- Submission Details Box -->
-                    <div class="important-dates-box">
-                        <h5><i class="fas fa-calendar-alt me-2"></i>Important Dates</h5>
-                        <div class="dates-grid">
-                            <div class="date-item">
-                                <strong>Submission Deadline:</strong> August 22, 2025
-                            </div>
-                            <div class="date-item">
-                                <strong>Notification:</strong> September 22, 2025
-                            </div>
-                            <div class="date-item">
-                                <strong>Camera-Ready:</strong> October 15, 2025
-                            </div>
-                            <div class="date-item">
-                                <strong>Workshop Date:</strong> December 2025
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- EEG Challenge Section -->
-        <div class="container mt-4">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="card border-primary">
-                        <div class="card-body">
-                            <h3 class="card-title text-primary mb-3" style="font-size: 1.1rem;">
-                                <i class=" fas fa-trophy me-2"></i>EEG Foundation Challenge 2025
-                            </h3>
-                            <p class="card-text lead mb-3" style="font-size: 1.1rem;">
-                                The <a href="https://eeg2025.github.io" target="_blank" class="text-decoration-none">EEG
-                                    Foundation Challenge 2025</a>, accepted as a NeurIPS 2025 competition, invites
-                                participants to develop EEG models that generalize across subjects and tasks using
-                                high-density EEG data from over 3,000 individuals.
-                            </p>
-                            <p class="card-text lead mb-4" style="font-size: 1.1rem;">
-                                The top entry in the challenge will be invited to give a contributed talk at our
-                                workshop.
-                            </p>
+                        <div class="col-lg-6 mb-4">
+                            <a href="https://github.com/mazabou/awesome-neurofm" target="_blank"
+                                class="text-decoration-none">
+                                <div class="card h-100 community-card">
+                                    <div class="card-body text-center">
+                                        <div class="community-icon mb-3">
+                                            <i class="fab fa-github fa-3x text-dark"></i>
+                                        </div>
+                                        <h4 class="card-title">Awesome Neuro-FM Repository</h4>
+                                        <p class="card-text" style="font-size: 1rem;">
+                                            A curated list of foundation models for the brain and body. This is not a
+                                            comprehensive list - feel free to submit a pull request!
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -770,131 +627,23 @@
         </div>
     </section>
 
-    <!-- Call for Demos Section -->
-    <section id="call-for-demos" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Call for Demos</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <p class="lead mb-4">
-                        We invite submissions for interactive demos that showcase novel methods, devices, or
-                        applications of AI for neural and physiological data. The goal of the demo session is to inspire
-                        attendees, foster hands-on learning, and highlight the real-world impact of advances in the
-                        field.
-                    </p>
-
-                    <h4 class="mb-3">We Especially Encourage:</h4>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <ul class="lead list-unstyled">
-                                <li><i class="fas fa-check text-success me-2"></i>Real-time systems that decode or
-                                    visualize biosignal data</li>
-                                <li><i class="fas fa-check text-success me-2"></i>Demonstrations of new recording
-                                    hardware or wearable devices</li>
-                                <li><i class="fas fa-check text-success me-2"></i>Prototypes of clinical or consumer
-                                    neurotechnology</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="lead list-unstyled">
-                                <li><i class="fas fa-check text-success me-2"></i>Interactive data visualization tools
-                                </li>
-                                <li><i class="fas fa-check text-success me-2"></i>Software tools for large-scale
-                                    biosignal analysis</li>
-                                <li><i class="fas fa-check text-success me-2"></i>Brain-computer interface
-                                    demonstrations
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h4 class="mb-3">Submission Guidelines</h4>
-                    <div class="mb-4">
-                        <h5><i class="fas fa-file-alt me-2" style="font-size: 0.9rem;"></i>Format and Length</h5>
-                        <p class="mb-3" style="font-size: 1.1rem;">Demo submissions should be <strong>500 words or
-                                fewer</strong> and submitted via
-                            <strong>Google Forms</strong> (link will be provided upon workshop acceptance).
-                        </p>
-
-                        <h5><i class="fas fa-cogs me-2" style="font-size: 0.9rem;"></i>Required Information</h5>
-                        <p class="mb-3" style="font-size: 1.1rem;">Include system description, demo goals, technical
-                            requirements, and setup needs
-                            for the venue.</p>
-
-                        <h5><i class="fas fa-laptop me-2" style="font-size: 0.9rem;"></i>Technical Setup</h5>
-                        <p class="mb-0" style="font-size: 1.1rem;">Demos will run parallel to the morning poster
-                            session. Please specify any
-                            special equipment or space requirements.</p>
-                    </div>
-
-                    <!-- Demo Submission Details Box -->
-                    <div class="demo-dates-box">
-                        <h5><i class="fas fa-calendar-alt me-2"></i>Demo Submission Timeline</h5>
-                        <div class="dates-grid">
-                            <div class="date-item">
-                                <strong>Demo Submission Deadline:</strong> August 22, 2025
-                            </div>
-                            <div class="date-item">
-                                <strong>Demo Notification:</strong> September 22, 2025
-                            </div>
-                            <div class="date-item">
-                                <strong>Setup Instructions Due:</strong> October 15, 2025
-                            </div>
-                            <div class="date-item">
-                                <strong>Demo Session:</strong> December 2025
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Travel Awards Section -->
-    <section id="travel-awards" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Travel Awards</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <p class="lead mb-4">
-                        We are committed to supporting researchers from diverse backgrounds and institutions to
-                        attend our workshop. Travel awards will be available to help cover registration and
-                        travel expenses for qualifying participants.
-                    </p>
-
-                    <p class="lead mb-4">Priority will be given to students, postdocs, and researchers from
-                        underrepresented groups or institutions with limited funding.</p>
-
-                    <div class="alert" style="font-size: 1.1rem;">
-                        <strong>Application Details:</strong> More details about travel award eligibility, application
-                        procedures, and deadlines will be shared closer to the workshop.
-                    </div>
-
-                    <p class="text-muted text-center mt-3 mb-0">
-                        <small></small>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
     <!-- Sponsors Section -->
-    <section id="sponsors" class="py-5 bg-light">
+    <section id="sponsors" class="py-5">
         <div class="container">
             <h2 class="text-center mb-5">Sponsors</h2>
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="sponsor-card text-center">
-                        <img src="assets/meta.png" class="sponsor-logo" alt="Meta">
-                        <h5 class="sponsor-name mt-3">Meta</h5>
+                        <img src="assets/arni.png" class="sponsor-logo" alt="ARNI">
+                        <h5 class="sponsor-name mt-3">ARNI</h5>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="sponsor-card text-center">
-                        <img src="assets/arni.png" class="sponsor-logo" alt="ARNI">
-                        <h5 class="sponsor-name mt-3">ARNI</h5>
+                        <img src="assets/meta.png" class="sponsor-logo" alt="Meta">
+                        <h5 class="sponsor-name mt-3">Meta</h5>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
@@ -912,7 +661,6 @@
     <footer class="py-4 bg-dark text-white text-center">
         <div class="container">
             <p>&copy; 2025 Mehdi Azabou. All rights reserved.</p>
-
         </div>
     </footer>
 
