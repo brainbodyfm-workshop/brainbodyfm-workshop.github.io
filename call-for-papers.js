@@ -44,5 +44,5 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize timeline progress with a delay to ensure DOM is ready
     setTimeout(() => {
         updateTimelineProgress();
-    }, 300);
+    }, 1000);
 }); 
