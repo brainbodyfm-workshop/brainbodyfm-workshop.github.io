@@ -72,16 +72,9 @@ section {
 
 .speaker-card,
 .organizer-card {
-    transition: transform 0.3s;
-    cursor: pointer;
     border: none;
     background-color: transparent;
     border-radius: 12px;
-}
-
-.speaker-card:hover,
-.organizer-card:hover {
-    transform: translateY(-5px);
 }
 
 .card-img-top {
@@ -111,6 +104,41 @@ section {
 .card-text {
     font-size: 0.8rem;
     color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    margin-top: 0.5rem;
+    align-items: center;
+}
+
+.social-icons i {
+    font-size: 1.2em;
+    vertical-align: middle;
+    color: #666;
+    line-height: 1;
+    transition: color 0.3s;
+    margin: 0;
+    padding: 0;
+}
+
+.social-icons a:hover i {
+    color: #007bff;
+}
+
+.bsky-icon {
+    color: #1d9bf0 !important;
+}
+
+.x-icon {
+    color: #000 !important;
+}
+
+.globe-icon {
+    color: #737473 !important;
 }
 
 @media (max-width: 768px) {
@@ -1291,6 +1319,11 @@ footer p {
 
 .mb-4 {
     margin-bottom: 0.5rem !important;
+}
+
+/* Reduce spacing between organizer rows */
+#organizers .mb-4 {
+    margin-bottom: 0rem !important;
 }
 
 /* Important Dates Box Styling */
@@ -2604,5 +2637,11 @@ footer p {
 
     .mobile-nav {
         display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .social-icons {
+        justify-content: flex-start;
     }
 }
