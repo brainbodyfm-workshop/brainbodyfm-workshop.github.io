@@ -1931,7 +1931,8 @@ footer p {
     height: 100%;
     background: #000;
     border-radius: 4px;
-    transition: width 0.8s ease;
+    transition: width 1s ease-in-out;
+    width: 0%;
 }
 
 .timeline-milestones {
@@ -1973,9 +1974,9 @@ footer p {
 }
 
 .milestone-marker.upcoming {
-    background: #000;
-    border-color: #000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    background: #6c757d;
+    border-color: #6c757d;
+    box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
 }
 
 .milestone-marker.current {
@@ -1983,6 +1984,12 @@ footer p {
     border-color: #dc3545;
     animation: current-milestone 3s ease-in-out infinite;
     box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.milestone-marker.completed {
+    background: #000;
+    border-color: #000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .milestone-content {
@@ -2024,6 +2031,11 @@ footer p {
 
 /* Make the first upcoming status visible */
 .timeline-milestone:first-child .milestone-status.upcoming {
+    opacity: 1;
+}
+
+/* Make the current milestone's upcoming status visible */
+.timeline-milestone.current .milestone-status.upcoming {
     opacity: 1;
 }
 
@@ -2103,6 +2115,11 @@ footer p {
     animation: current-milestone 3s ease-in-out infinite;
 }
 
+.mobile-milestone.completed::before {
+    background-color: #000;
+    box-shadow: 0 0 0 2px #000;
+}
+
 .mobile-milestone-content {
     margin-left: 0.5rem;
 }
@@ -2152,6 +2169,48 @@ footer p {
 }
 
 /* Call for Papers Page - Reduced Font Sizes */
+/* Call for Papers Header Layout */
+#call-for-papers .d-flex.justify-content-between {
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: baseline !important;
+}
+
+#call-for-papers .btn-outline-danger {
+    color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    margin-top: 0;
+    box-shadow: 0 1px 3px rgba(220, 53, 69, 0.15);
+    vertical-align: baseline;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+
+#call-for-papers .btn-outline-danger:hover {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.25);
+}
+
+@media (max-width: 768px) {
+    #call-for-papers .d-flex.justify-content-between {
+        flex-direction: column;
+        align-items: stretch !important;
+        text-align: center;
+    }
+
+    #call-for-papers .btn-danger {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+        margin-top: 1rem;
+    }
+}
+
 #call-for-papers .lead {
     font-size: 1rem;
     line-height: 1.5;
