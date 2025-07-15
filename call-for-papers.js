@@ -16,8 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ];
 
         // Temporarily simulate next week (July 16, 2025) for testing
-        const now = new Date('2025-07-16'); // Simulate next week
-        // const now = new Date(); // Uncomment this line to use real current date
+        const now = new Date(); // Uncomment this line to use real current date
         const startDate = milestones[0];
         const endDate = milestones[1]; // Progress to submission deadline
 

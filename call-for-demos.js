@@ -9,15 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Call for Demos specific milestone dates
         const milestones = [
-            new Date('2025-07-22'), // Submissions Open
+            new Date('2025-07-09'), // Submissions Open
             new Date('2025-08-22'), // Submission Deadline
             new Date('2025-09-22'), // Accept/Reject Notification
             new Date('2025-12-06')  // Workshop
         ];
 
         // Temporarily simulate next week (July 16, 2025) for testing
-        const now = new Date('2025-07-16'); // Simulate next week
-        // const now = new Date(); // Uncomment this line to use real current date
+        const now = new Date(); // Uncomment this line to use real current date
         const startDate = milestones[0];
         const endDate = milestones[1]; // Progress to submission deadline
 
@@ -38,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         setTimeout(() => {
             timelineProgress.style.width = progress + '%';
-        }, 200);
+        }, 100);
     }
 
     // Initialize timeline progress with a delay to ensure DOM is ready
