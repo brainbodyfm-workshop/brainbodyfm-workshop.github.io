@@ -68,14 +68,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const marker = el.querySelector('.milestone-marker');
             marker.classList.remove('completed', 'current', 'upcoming');
             const status = el.querySelector('.milestone-status');
-            if (i < currentIdx - 1) {
+            if (i < currentIdx) {
                 el.classList.add('completed');
                 marker.classList.add('completed');
                 if (status) status.textContent = 'Completed';
-            } else if (i === currentIdx - 1) {
+            } else if (i === currentIdx) {
                 el.classList.add('current');
                 marker.classList.add('current');
-                if (status) status.textContent = 'Current';
+                if (status) status.textContent = 'Upcoming';
             } else {
                 marker.classList.add('upcoming');
                 if (status) status.textContent = 'Upcoming';
@@ -86,12 +86,12 @@ document.addEventListener('DOMContentLoaded', function () {
         mobileMilestones.forEach((el, i) => {
             el.classList.remove('completed', 'current');
             const status = el.querySelector('.mobile-milestone-status');
-            if (i < currentIdx - 1) {
+            if (i < currentIdx) {
                 el.classList.add('completed');
                 if (status) status.textContent = 'Completed';
-            } else if (i === currentIdx - 1) {
+            } else if (i === currentIdx) {
                 el.classList.add('current');
-                if (status) status.textContent = 'Current';
+                if (status) status.textContent = 'Upcoming';
             } else {
                 if (status) status.textContent = 'Upcoming';
             }
