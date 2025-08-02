@@ -1219,6 +1219,12 @@ footer p {
         flex: 0 0 auto;
         width: 20%;
     }
+    
+    /* Special class for 6 speakers in one row */
+    .col-lg-1-6 {
+        flex: 0 0 auto;
+        width: 16.666667%;
+    }
 }
 
 .modality-image {
