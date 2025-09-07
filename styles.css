@@ -1219,7 +1219,7 @@ footer p {
         flex: 0 0 auto;
         width: 20%;
     }
-    
+
     /* Special class for 6 speakers in one row */
     .col-lg-1-6 {
         flex: 0 0 auto;
@@ -1785,6 +1785,13 @@ footer p {
     text-align: center;
     animation: pulse 2s infinite;
     box-shadow: 0 1px 3px rgba(255, 68, 68, 0.3);
+}
+
+/* Submission Closed Badge - No animation */
+.deadline-badge.submission-closed {
+    background: #6c757d;
+    animation: none;
+    box-shadow: 0 1px 3px rgba(108, 117, 125, 0.3);
 }
 
 /* Travel Awards Badge - Gray */
