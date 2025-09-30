@@ -2759,3 +2759,101 @@ footer p {
         justify-content: flex-start;
     }
 }
+
+/* Accepted Demos Section - Modern Table Styling */
+#accepted-demos h2 {
+    font-size: 1.8rem !important;
+    text-align: left !important;
+    margin-bottom: 2rem !important;
+}
+
+#accepted-demos h2::after {
+    display: none;
+}
+
+#accepted-demos .table-responsive {
+    border: 1px solid #e9ecef;
+    border-radius: 0;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+#accepted-demos .table {
+    margin-bottom: 0;
+}
+
+/* Sticky, dark header with subtle elevation */
+#accepted-demos thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #1f1f1f !important;
+    color: #ffffff !important;
+    border-color: #1f1f1f !important;
+}
+
+/* Softer striped rows */
+#accepted-demos .table-striped>tbody>tr:nth-of-type(odd)>* {
+    background-color: #fafbfc;
+}
+
+/* Row separators and hover effect */
+#accepted-demos .table> :not(caption)>* {
+    border-color: #f0f1f3;
+}
+
+#accepted-demos .table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+#accepted-demos .table tbody tr:hover>* {
+    background-color: inherit;
+}
+
+/* Cell typography tweaks */
+#accepted-demos .table td:first-child {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+#accepted-demos .table td:nth-child(2) {
+    color: #4b5563;
+}
+
+#accepted-demos .table td:nth-child(3) {
+    color: #6b7280;
+}
+
+/* Comfortable cell padding */
+#accepted-demos .table td,
+#accepted-demos .table th {
+    padding: 0.9rem 1rem;
+}
+
+/* Mobile: ensure sticky header stays visible within scroll area */
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+    #accepted-demos thead th {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+}
+
+/* Accepted Demos - Column widths */
+#accepted-demos .table {
+    table-layout: auto;
+}
+
+#accepted-demos thead th:first-child,
+#accepted-demos tbody td:first-child {
+    width: 50%;
+}
+
+#accepted-demos thead th:nth-child(2),
+#accepted-demos tbody td:nth-child(2) {
+    width: 30%;
+}
+
+#accepted-demos thead th:nth-child(3),
+#accepted-demos tbody td:nth-child(3) {
+    width: 20%;
+}
