@@ -132,4 +132,97 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
         updateTimelineProgress();
     }, 1500); // Longer delay to ensure it runs after the main script
+
+    // Load and display accepted papers from CSV
+    function loadAcceptedPapers() {
+        fetch('brainbodyfm_accepted_submissions.csv')
+            .then(response => response.text())
+            .then(csvText => {
+                const lines = csvText.split('\n');
+                const headers = lines[0].split(',');
+
+                const spotlightPapers = [];
+                const posterPapers = [];
+
+                // Parse CSV data (skip header row)
+                for (let i = 1; i < lines.length; i++) {
+                    if (lines[i].trim()) {
+                        const values = parseCSVLine(lines[i]);
+                        if (values.length >= 5) {
+                            const paper = {
+                                title: values[0],
+                                authors: values[3],
+                                openReviewLink: values[2],
+                                status: values[4]
+                            };
+
+                            if (paper.status === 'Spotlight') {
+                                spotlightPapers.push(paper);
+                            } else if (paper.status === 'Poster') {
+                                posterPapers.push(paper);
+                            }
+                        }
+                    }
+                }
+
+                // Display spotlight papers
+                const spotlightList = document.getElementById('spotlight-papers');
+                if (spotlightList) {
+                    spotlightPapers.forEach(paper => {
+                        const li = document.createElement('li');
+                        li.className = 'mb-2';
+                        li.innerHTML = `
+                            <strong>${paper.title}</strong><br>
+                            <em>${paper.authors}</em> - 
+                            <a href="${paper.openReviewLink}" target="_blank">See on OpenReview</a>
+                        `;
+                        spotlightList.appendChild(li);
+                    });
+                }
+
+                // Display poster papers
+                const posterList = document.getElementById('poster-papers');
+                if (posterList) {
+                    posterPapers.forEach(paper => {
+                        const li = document.createElement('li');
+                        li.className = 'mb-2';
+                        li.innerHTML = `
+                            <strong>${paper.title}</strong><br>
+                            <em>${paper.authors}</em> - 
+                            <a href="${paper.openReviewLink}" target="_blank">See on OpenReview</a>
+                        `;
+                        posterList.appendChild(li);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error loading accepted papers:', error);
+            });
+    }
+
+    // Helper function to parse CSV line (handles quoted fields with commas)
+    function parseCSVLine(line) {
+        const result = [];
+        let current = '';
+        let inQuotes = false;
+
+        for (let i = 0; i < line.length; i++) {
+            const char = line[i];
+
+            if (char === '"') {
+                inQuotes = !inQuotes;
+            } else if (char === ',' && !inQuotes) {
+                result.push(current.trim());
+                current = '';
+            } else {
+                current += char;
+            }
+        }
+
+        result.push(current.trim());
+        return result;
+    }
+
+    // Load papers when page loads
+    loadAcceptedPapers();
 }); 

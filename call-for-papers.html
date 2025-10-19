@@ -60,10 +60,11 @@
             <div class="nav-group-block">
                 <div class="nav-group-label">Submit to the workshop</div>
                 <div class="nav-submission-group">
-                    <a class="nav-link" href="call-for-papers">Call for Papers<span
+                    <a class="nav-link" href="call-for-papers">Accepted Papers<span
                             class="deadline-badge submission-closed">Submission closed</span></a>
-                    <a class="nav-link" href="call-for-demos">Call for Demos<span class="deadline-badge">Accepted demos
-                            available</span></a>
+                    <a class="nav-link" href="call-for-demos">Accepted Demos<span
+                            class="deadline-badge submission-closed">Submission closed
+                        </span></a>
                     <a class="nav-link" href="travel-awards">Travel Awards<span
                             class="deadline-badge submission-closed">Submission closed</span></a>
                     <div class="nav-item dropdown">
@@ -275,7 +276,26 @@
     <main>
         <!-- Call for Papers Section -->
         <section id="call-for-papers" class="py-5">
+
             <div class="container">
+                <h4 class="mb-3 mt-5" style="margin-top: 0px !important;">
+                    List of Accepted Papers
+                </h4>
+                <div class="mb-4">
+                    <h5 class="mb-3">Spotlight Presentations</h5>
+                    <ul id="spotlight-papers" class="list-unstyled">
+                        <!-- Papers will be loaded dynamically -->
+                    </ul>
+
+                    <h5 class="mb-3 mt-4">Poster Presentations</h5>
+                    <ul id="poster-papers" class="list-unstyled">
+                        <!-- Papers will be loaded dynamically -->
+                    </ul>
+                </div>
+
+                <hr style="border: none; border-top: 2px solid #e0e0e0; margin: 32px 0;">
+
+
                 <div class="d-flex justify-content-between align-items-center mb-5">
                     <h2 class="mb-0">Call for Papers</h2>
                     <button class="btn btn-outline-secondary rounded-pill px-3 py-2" disabled
@@ -618,6 +638,7 @@
                                 workshop.
                             </p>
                         </div>
+
 
                     </div>
                 </div>

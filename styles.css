@@ -2585,9 +2585,6 @@ footer p {
     transform: scale(1.1);
 }
 
-.community-card:hover .community-icon i {
-    /* Shadow animation removed */
-}
 
 .community-card .card-title {
     transition: color 0.3s ease;
