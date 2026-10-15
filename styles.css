@@ -512,6 +512,10 @@ section:not(header) {
     font-weight: 600;
 }
 
+.content-block p {
+    margin: 0;
+}
+
 .speakers {
     font-size: 0.9rem;
     color: #555;
