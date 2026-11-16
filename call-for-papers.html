@@ -33,7 +33,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20261023b">
 </head>
 
 <body>
@@ -60,9 +60,9 @@
             <div class="nav-group-block">
                 <div class="nav-group-label">Submit to the workshop</div>
                 <div class="nav-submission-group">
-                    <a class="nav-link" href="call-for-papers.html">Call for Papers<span class="deadline-badge">September 5, 2026</span></a>
-                    <a class="nav-link" href="call-for-demos.html">Call for Demos<span class="deadline-badge">September 19, 2026</span></a>
-                    <a class="nav-link" href="travel-awards.html">Travel Awards<span class="deadline-badge">September 5, 2026</span></a>
+                    <a class="nav-link" href="call-for-papers.html">Accepted Papers<span class="deadline-badge submission-closed">Submission closed</span></a>
+                    <a class="nav-link" href="call-for-demos.html">Accepted Demos<span class="deadline-badge submission-closed">Submission closed</span></a>
+                    <a class="nav-link" href="travel-awards.html">Travel Awards<span class="deadline-badge submission-closed">Submission closed</span></a>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle updates-btn" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -185,14 +185,41 @@
         <!-- Call for Papers Section -->
         <section id="call-for-papers" class="py-5">
             <div class="container">
+                <!-- Accepted papers: filled from brainbodyfm_accepted_submissions.csv, hidden while empty -->
+                <div id="accepted-papers" style="display: none;">
+                <h4 class="mb-3 mt-5" style="margin-top: 0px !important;">
+                    List of Accepted Papers
+                </h4>
+                <div class="mb-4">
+                    <input type="search" id="paper-search" class="form-control rounded-pill px-3"
+                        placeholder="Search by title, author, or keyword" aria-label="Search accepted papers">
+                    <div id="modality-filters" class="d-flex flex-wrap gap-2 mt-3" role="group"
+                        aria-label="Filter by modality"></div>
+                    <div id="paper-count" class="text-muted small mt-2" aria-live="polite"></div>
+                </div>
+                <p id="no-papers-match" class="text-muted" style="display: none;">No papers match your search.</p>
+                <div class="mb-4">
+                    <h5 class="paper-section-heading">Spotlight Presentations</h5>
+                    <ul id="spotlight-papers" class="list-unstyled">
+                        <!-- Papers will be loaded dynamically -->
+                    </ul>
+
+                    <h5 class="paper-section-heading">Poster Presentations</h5>
+                    <ul id="poster-papers" class="list-unstyled">
+                        <!-- Papers will be loaded dynamically -->
+                    </ul>
+                </div>
+
+                <hr style="border: none; border-top: 2px solid #e0e0e0; margin: 32px 0;">
+                </div>
+
                 <div class="d-flex justify-content-between align-items-center mb-5">
                     <h2 class="mb-0">Call for Papers</h2>
-                    <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/BrainBodyFM" target="_blank"
-                        class="btn btn-outline-danger rounded-pill px-3 py-2"
+                    <button class="btn btn-outline-secondary rounded-pill px-3 py-2" disabled
                         style="font-weight: 500; font-size: 1rem; transform: scale(0.9); transform-origin: right center;">
-                        <i class="fas fa-external-link-alt me-2"></i>
-                        Submit through OpenReview
-                    </a>
+                        <i class="fas fa-lock me-2"></i>
+                        Submission Portal Closed
+                    </button>
                 </div>
 
                 <!-- Timeline -->
@@ -201,35 +228,32 @@
                         <div class="timeline-progress" id="timeline-progress"></div>
 
                         <div class="timeline-milestones">
-                            <div class="timeline-milestone">
-                                <div class="milestone-marker upcoming"></div>
+                            <div class="timeline-milestone completed">
+                                <div class="milestone-marker completed"></div>
                                 <div class="milestone-content">
                                     <div class="milestone-label">Submissions Open</div>
                                     <div class="milestone-date">August 3, 2026</div>
-                                    <div class="milestone-status upcoming">Upcoming</div>
                                 </div>
                             </div>
 
-                            <div class="timeline-milestone">
-                                <div class="milestone-marker upcoming"></div>
+                            <div class="timeline-milestone completed">
+                                <div class="milestone-marker completed"></div>
                                 <div class="milestone-content">
                                     <div class="milestone-label">Submission Deadline</div>
                                     <div class="milestone-date">September 5, 2026 AoE</div>
-                                    <div class="milestone-status upcoming">Upcoming</div>
                                 </div>
                             </div>
 
-                            <div class="timeline-milestone">
-                                <div class="milestone-marker upcoming"></div>
+                            <div class="timeline-milestone completed">
+                                <div class="milestone-marker completed"></div>
                                 <div class="milestone-content">
                                     <div class="milestone-label">Accept/Reject Notification</div>
                                     <div class="milestone-date">September 29, 2026</div>
-                                    <div class="milestone-status upcoming">Upcoming</div>
                                 </div>
                             </div>
 
-                            <div class="timeline-milestone">
-                                <div class="milestone-marker upcoming"></div>
+                            <div class="timeline-milestone current">
+                                <div class="milestone-marker current"></div>
                                 <div class="milestone-content">
                                     <div class="milestone-label">Camera Ready Deadline</div>
                                     <div class="milestone-date">November 6, 2026</div>
@@ -253,28 +277,25 @@
                 <div class="mobile-timeline-list">
                     <h4 class="mb-3">Important Dates</h4>
                     <ul class="list-unstyled">
-                        <li class="mobile-milestone">
+                        <li class="mobile-milestone completed">
                             <div class="mobile-milestone-content">
                                 <div class="mobile-milestone-label">Submissions Open</div>
                                 <div class="mobile-milestone-date">August 3, 2026</div>
-                                <div class="mobile-milestone-status">Upcoming</div>
                             </div>
                         </li>
-                        <li class="mobile-milestone">
+                        <li class="mobile-milestone completed">
                             <div class="mobile-milestone-content">
                                 <div class="mobile-milestone-label">Submission Deadline</div>
                                 <div class="mobile-milestone-date">September 5, 2026 AoE</div>
-                                <div class="mobile-milestone-status">Upcoming</div>
                             </div>
                         </li>
-                        <li class="mobile-milestone">
+                        <li class="mobile-milestone completed">
                             <div class="mobile-milestone-content">
                                 <div class="mobile-milestone-label">Accept/Reject Notification</div>
                                 <div class="mobile-milestone-date">September 29, 2026</div>
-                                <div class="mobile-milestone-status">Upcoming</div>
                             </div>
                         </li>
-                        <li class="mobile-milestone">
+                        <li class="mobile-milestone current">
                             <div class="mobile-milestone-content">
                                 <div class="mobile-milestone-label">Camera Ready Deadline</div>
                                 <div class="mobile-milestone-date">November 6, 2026</div>
@@ -486,9 +507,7 @@
                                         class="text-decoration-none">modified
                                         NeurIPS 2026 LaTeX style</a>. All
                                     submissions will be
-                                    made through <strong><a
-                                            href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/BrainBodyFM"
-                                            target="_blank" class="text-decoration-none">OpenReview</a></strong>.</span>
+                                    made through <strong>OpenReview</strong>.</span>
                             </h5>
 
                             <h5>Anonymization: <span style="font-weight: normal;">All
