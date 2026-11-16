@@ -33,7 +33,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20261023b">
 </head>
 
 <body>
@@ -60,9 +60,9 @@
             <div class="nav-group-block">
                 <div class="nav-group-label">Submit to the workshop</div>
                 <div class="nav-submission-group">
-                    <a class="nav-link" href="call-for-papers.html">Call for Papers<span class="deadline-badge">September 5, 2026</span></a>
-                    <a class="nav-link" href="call-for-demos.html">Call for Demos<span class="deadline-badge">September 19, 2026</span></a>
-                    <a class="nav-link" href="travel-awards.html">Travel Awards<span class="deadline-badge">September 5, 2026</span></a>
+                    <a class="nav-link" href="call-for-papers.html">Accepted Papers<span class="deadline-badge submission-closed">Submission closed</span></a>
+                    <a class="nav-link" href="call-for-demos.html">Accepted Demos<span class="deadline-badge submission-closed">Submission closed</span></a>
+                    <a class="nav-link" href="travel-awards.html">Travel Awards<span class="deadline-badge submission-closed">Submission closed</span></a>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle updates-btn" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -182,17 +182,195 @@
         </div>
     </nav>
     <main>
+        <!-- Accepted Demos Section -->
+        <section id="accepted-demos" class="py-5">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="mb-3 mt-5" style="margin-top: 0px !important;">List of Accepted Demos</h4>
+                </div>
+
+                <!-- Demo Session I -->
+                <h5 class="mb-3 mt-4">Demo Session I <span class="text-muted fw-normal" style="font-size: 0.9em;">· December 12, 10:40 AM – 12:00 PM</span></h5>
+                <div class="table-responsive mb-5">
+                    <table class="table table-striped align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col" style="width: 55%;">Demo</th>
+                                <th scope="col">Authors</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>A 600 channel wearable multimodal fNIRS-EEG headband with real-time attention decoding</strong>
+                                    <div class="demo-affiliation small mt-1">Neurode</div>
+                                </td>
+                                <td>Nathalie Gouailhardou, Damian Sofrevski, Joshua Vinson</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Decoding Mental State in Real Time with Multimodal Foundation Models</strong>
+                                    <div class="demo-affiliation small mt-1">brain.space</div>
+                                </td>
+                                <td>Tehila Pelled, Carmit Sahar, Roy Segal, Roy Urbach, Tomer Fekete</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Does Denoising Matter? An Interactive Two-Brain Decoder That Shows What Artifacts Cost</strong>
+                                    <div class="demo-affiliation small mt-1">UC San Diego, National Tsing Hua University</div>
+                                </td>
+                                <td>Kung-Yi Chang, Tzyy-Ping Jung, Chun-Hsiang Chuang, Ying Choon Wu</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>ECG Delineation with Deep Learning</strong>
+                                    <div class="demo-affiliation small mt-1">Carnegie Mellon University, Allegheny Health Network, University of Colorado</div>
+                                </td>
+                                <td>Joseph Scharpf, William Han, Chaojing Duan, Michael A. Rosenberg, Emerson Liu, Ding Zhao</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>ExoHand: A £200 Closed-Loop Hand Exoskeleton, Calibrated in 22 Seconds</strong>
+                                    <div class="demo-affiliation small mt-1">Imperial College London</div>
+                                </td>
+                                <td>Anshvardhan Shetty, Adhiraiyan Sasikumar</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Exploring brain network cycling in real time</strong>
+                                    <div class="demo-affiliation small mt-1">Resonait</div>
+                                </td>
+                                <td>Alex R Qin, Cameron Higgins</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Lightning Pose: software for 2D and 3D animal pose estimation</strong>
+                                    <div class="demo-affiliation small mt-1">Columbia University</div>
+                                </td>
+                                <td>Matthew Whiteway, Lenny Aharon</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>NeuroOS</strong>
+                                    <div class="demo-affiliation small mt-1">The University of Osaka</div>
+                                </td>
+                                <td>Dai Shimizu</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Neurostrip</strong>
+                                    <div class="demo-affiliation small mt-1">Control Bionics</div>
+                                </td>
+                                <td>Georgia Fagan, Dylan Barnaby</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>VGP Lab: Interactive Psychophysiology of Voluntarily Generated Chills</strong>
+                                    <div class="demo-affiliation small mt-1">Independent Researcher</div>
+                                </td>
+                                <td>Tasos Ignatiadis</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Demo Session II -->
+                <h5 class="mb-3 mt-4">Demo Session II <span class="text-muted fw-normal" style="font-size: 0.9em;">· December 12, 3:30 PM – 5:00 PM</span></h5>
+                <div class="table-responsive">
+                    <table class="table table-striped align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col" style="width: 55%;">Demo</th>
+                                <th scope="col">Authors</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Bring Your Own EEG: Auditable Curation for Neuro-FM</strong>
+                                    <div class="demo-affiliation small mt-1">Mila</div>
+                                </td>
+                                <td>Mahta Ramezanian</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>edfcore: Random-Access EDF/BDF Infrastructure for Large Biosignal Models</strong>
+                                    <div class="demo-affiliation small mt-1">Novi HS/JHU DE/WCC DE</div>
+                                </td>
+                                <td>Sarthak Tayal</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>From Raw Recordings to Model-Ready Batches: Unifying BCI Datasets for Foundation Models</strong>
+                                    <div class="demo-affiliation small mt-1">Tether.evo, CatalystNeuro</div>
+                                </td>
+                                <td>Francesco Jamal Sheiban, Luiz Tauffer, Tommaso Boccato, Heberto Mayorquin, Michal Olak, Matteo Ferrante, Ben Dichter</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Interactive 3D Brain Explorer</strong>
+                                    <div class="demo-affiliation small mt-1">Tata Consultancy Services</div>
+                                </td>
+                                <td>Nasimuddin Ahmed</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Meta Neural Band</strong>
+                                    <div class="demo-affiliation small mt-1">Meta</div>
+                                </td>
+                                <td>Alexandre Gramfort, Amin Nejatbakhsh</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>MycoKit: Bioelectric Recording Kits from Lab to Forest</strong>
+                                    <div class="demo-affiliation small mt-1">University of Queensland</div>
+                                </td>
+                                <td>Dwij Dutt, Shafa Mulia, Matthew D'Souza, Marie Boden, Mitchell Bradshaw, Bianca Tainsh, Ellis Lange, Clarissa Whitmire, Connor Weekes, Janet Wiles, Karl Bertling</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>RABBiT: Interactive speech-to-fMRI prediction and in-silico fMRI experiments</strong>
+                                    <div class="demo-affiliation small mt-1">Max Planck Institute for Software Systems</div>
+                                </td>
+                                <td>Omer Moussa, Mariya Toneva</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Rhythm: A Consumer Wearable Ear-Worn Platform for Real-Time Multimodal Biosignal Decoding and Closed-Loop Interaction</strong>
+                                    <div class="demo-affiliation small mt-1">Rhythm</div>
+                                </td>
+                                <td>Tristan Ranee, Christina Maher, Shanaa Modchalingam, Robert Edgington</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>TorchBrain</strong>
+                                    <div class="demo-affiliation small mt-1">Mila, University of Pennsylvania</div>
+                                </td>
+                                <td>Colleen J. Gillon, Vinam Arora, Milo Sobral, Alexandre Andre, Blake A. Richards, Eva Dyer, Mehdi Azabou</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Zero-Calibration Attention Decoding by Cogitat</strong>
+                                    <div class="demo-affiliation small mt-1">Cogitat</div>
+                                </td>
+                                <td>Siegfried Ludwig, Stylianos Bakas, Konstantinos Barmpas, Antonis Karantonis, Na Lee, Anastasios Loudovikos, Nikolaos Laskaris, Yannis Panagakis, Stefanos Zafeiriou, Dimitrios Adamos, Allan Ponniah</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
         <!-- Call for Demos Section -->
         <section id="call-for-demos" class="py-5">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center mb-5">
                     <h2 class="mb-0">Call for Demos</h2>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf0pBvSBG-KsWzesw35vn3CvHkXWFldZwqMTF7ZYzp04yHa0Q/viewform?usp=dialog"
-                        target="_blank" class="btn btn-outline-danger rounded-pill px-3 py-2"
+                    <button class="btn btn-outline-secondary rounded-pill px-3 py-2" disabled
                         style="font-weight: 500; font-size: 1rem; transform: scale(0.9); transform-origin: right center;">
-                        <i class="fas fa-external-link-alt me-2"></i>
-                        Submit through Google Forms
-                    </a>
+                        <i class="fas fa-lock me-2"></i>
+                        Submission Portal Closed
+                    </button>
                 </div>
 
                 <!-- Timeline -->
@@ -201,35 +379,32 @@
                         <div class="timeline-progress" id="timeline-progress"></div>
 
                         <div class="timeline-milestones">
-                            <div class="timeline-milestone">
-                                <div class="milestone-marker upcoming"></div>
+                            <div class="timeline-milestone completed">
+                                <div class="milestone-marker completed"></div>
                                 <div class="milestone-content">
                                     <div class="milestone-label">Submissions Open</div>
                                     <div class="milestone-date">August 3, 2026</div>
-                                    <div class="milestone-status upcoming">Upcoming</div>
                                 </div>
                             </div>
 
-                            <div class="timeline-milestone">
-                                <div class="milestone-marker upcoming"></div>
+                            <div class="timeline-milestone completed">
+                                <div class="milestone-marker completed"></div>
                                 <div class="milestone-content">
                                     <div class="milestone-label">Submission Deadline</div>
                                     <div class="milestone-date">September 19, 2026 AoE</div>
-                                    <div class="milestone-status upcoming">Upcoming</div>
                                 </div>
                             </div>
 
-                            <div class="timeline-milestone">
-                                <div class="milestone-marker upcoming"></div>
+                            <div class="timeline-milestone completed">
+                                <div class="milestone-marker completed"></div>
                                 <div class="milestone-content">
                                     <div class="milestone-label">Accept/Reject Notification</div>
                                     <div class="milestone-date">October 6, 2026</div>
-                                    <div class="milestone-status upcoming">Upcoming</div>
                                 </div>
                             </div>
 
-                            <div class="timeline-milestone">
-                                <div class="milestone-marker upcoming"></div>
+                            <div class="timeline-milestone current">
+                                <div class="milestone-marker current"></div>
                                 <div class="milestone-content">
                                     <div class="milestone-label">Workshop</div>
                                     <div class="milestone-date">December 12, 2026</div>
@@ -244,28 +419,25 @@
                 <div class="mobile-timeline-list">
                     <h4 class="mb-3">Important Dates</h4>
                     <ul class="list-unstyled">
-                        <li class="mobile-milestone">
+                        <li class="mobile-milestone completed">
                             <div class="mobile-milestone-content">
                                 <div class="mobile-milestone-label">Submissions Open</div>
                                 <div class="mobile-milestone-date">August 3, 2026</div>
-                                <div class="mobile-milestone-status">Upcoming</div>
                             </div>
                         </li>
-                        <li class="mobile-milestone">
+                        <li class="mobile-milestone completed">
                             <div class="mobile-milestone-content">
                                 <div class="mobile-milestone-label">Submission Deadline</div>
                                 <div class="mobile-milestone-date">September 19, 2026 AoE</div>
-                                <div class="mobile-milestone-status">Upcoming</div>
                             </div>
                         </li>
-                        <li class="mobile-milestone">
+                        <li class="mobile-milestone completed">
                             <div class="mobile-milestone-content">
                                 <div class="mobile-milestone-label">Accept/Reject Notification</div>
                                 <div class="mobile-milestone-date">October 6, 2026</div>
-                                <div class="mobile-milestone-status">Upcoming</div>
                             </div>
                         </li>
-                        <li class="mobile-milestone">
+                        <li class="mobile-milestone current">
                             <div class="mobile-milestone-content">
                                 <div class="mobile-milestone-label">Workshop</div>
                                 <div class="mobile-milestone-date">December 12, 2026</div>
@@ -321,10 +493,7 @@
                             <h5>Format and Length: <span style="font-weight: normal;">Demo proposals should be
                                     <strong>500
                                         words or
-                                        fewer</strong> and submitted through <a
-                                        href="https://docs.google.com/forms/d/e/1FAIpQLSf0pBvSBG-KsWzesw35vn3CvHkXWFldZwqMTF7ZYzp04yHa0Q/viewform?usp=dialog"
-                                        target="_blank" class="text-decoration-none">
-                                        Google Forms</a>. The
+                                        fewer</strong> and submitted through Google Forms. The
                                     submission should describe the demo, what it involves, and why it would be relevant
                                     for
                                     attendees of the workshop.</span>

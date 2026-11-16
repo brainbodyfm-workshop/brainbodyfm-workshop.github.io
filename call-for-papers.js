@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
             new Date('2026-09-05'), // Submission Deadline
             new Date('2026-09-29'), // Accept/Reject Notification
             new Date('2026-11-06'), // Camera Ready Deadline
-            new Date('2026-12-06')  // Workshop — PLACEHOLDER, NeurIPS 2026 date not yet announced
+            new Date('2026-12-12')  // Workshop
         ];
 
         const now = new Date();
@@ -46,71 +46,204 @@ document.addEventListener('DOMContentLoaded', function () {
         updateTimelineProgress();
     }, 1500); // Longer delay to ensure it runs after the main script
 
-    // Load and display accepted papers from CSV
+    // Load and display accepted papers from CSV.
+    // Each edition folder (root = current, 2025/, ...) ships its own
+    // brainbodyfm_accepted_submissions.csv. Columns are looked up by header name:
+    //   Title, Abstract, OpenReview Link, Authors, Status (Spotlight | Poster),
+    //   Modality (optional, several values separated by ";").
+    // Empty Authors / OpenReview Link / Modality are simply not shown; the section
+    // stays hidden until the CSV contains at least one paper.
+    const STATUS_LISTS = { Spotlight: 'spotlight-papers', Poster: 'poster-papers' };
+
+    let allPapers = [];
+    let activeModality = null; // null = all modalities
+    let searchQuery = '';
+
     function loadAcceptedPapers() {
+        const section = document.getElementById('accepted-papers');
+
         fetch('brainbodyfm_accepted_submissions.csv')
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('HTTP ' + response.status);
+                }
+                return response.text();
+            })
             .then(csvText => {
                 const lines = csvText.split('\n');
-                const headers = lines[0].split(',');
+                const headers = parseCSVLine(lines[0].replace(/^﻿/, ''));
+                const col = name => headers.indexOf(name);
+                const get = (values, name) => (col(name) >= 0 ? values[col(name)] || '' : '');
 
-                const spotlightPapers = [];
-                const posterPapers = [];
-
-                // Parse CSV data (skip header row)
                 for (let i = 1; i < lines.length; i++) {
-                    if (lines[i].trim()) {
-                        const values = parseCSVLine(lines[i]);
-                        if (values.length >= 5) {
-                            const paper = {
-                                title: values[0],
-                                authors: values[3],
-                                openReviewLink: values[2],
-                                status: values[4]
-                            };
-
-                            if (paper.status === 'Spotlight') {
-                                spotlightPapers.push(paper);
-                            } else if (paper.status === 'Poster') {
-                                posterPapers.push(paper);
-                            }
-                        }
+                    if (!lines[i].trim()) {
+                        continue;
+                    }
+                    const values = parseCSVLine(lines[i]);
+                    const paper = {
+                        title: get(values, 'Title'),
+                        abstract: get(values, 'Abstract'),
+                        openReviewLink: get(values, 'OpenReview Link'),
+                        authors: get(values, 'Authors'),
+                        status: get(values, 'Status'),
+                        modalities: get(values, 'Modality').split(';').map(m => m.trim()).filter(Boolean)
+                    };
+                    if (paper.title && STATUS_LISTS[paper.status]) {
+                        paper.searchText = normalize(
+                            [paper.title, paper.authors, paper.abstract, paper.modalities.join(' ')].join(' ')
+                        );
+                        allPapers.push(paper);
                     }
                 }
 
-                // Display spotlight papers
-                const spotlightList = document.getElementById('spotlight-papers');
-                if (spotlightList) {
-                    spotlightPapers.forEach(paper => {
-                        const li = document.createElement('li');
-                        li.className = 'mb-2';
-                        li.innerHTML = `
-                            <strong>${paper.title}</strong><br>
-                            <em>${paper.authors}</em> - 
-                            <a href="${paper.openReviewLink}" target="_blank">See on OpenReview</a>
-                        `;
-                        spotlightList.appendChild(li);
-                    });
+                // Alphabetical by title, independent of CSV row order
+                allPapers.sort((a, b) => a.title.localeCompare(b.title, 'en', { sensitivity: 'base' }));
+
+                if (section && allPapers.length > 0) {
+                    section.style.display = '';
                 }
 
-                // Display poster papers
-                const posterList = document.getElementById('poster-papers');
-                if (posterList) {
-                    posterPapers.forEach(paper => {
-                        const li = document.createElement('li');
-                        li.className = 'mb-2';
-                        li.innerHTML = `
-                            <strong>${paper.title}</strong><br>
-                            <em>${paper.authors}</em> - 
-                            <a href="${paper.openReviewLink}" target="_blank">See on OpenReview</a>
-                        `;
-                        posterList.appendChild(li);
-                    });
-                }
+                setupFilters();
+                renderPapers();
             })
             .catch(error => {
                 console.error('Error loading accepted papers:', error);
             });
+    }
+
+    // Lowercase and strip accents so "jose" matches "José"
+    function normalize(text) {
+        return text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    }
+
+    function setupFilters() {
+        const searchInput = document.getElementById('paper-search');
+        if (searchInput) {
+            searchInput.addEventListener('input', () => {
+                searchQuery = normalize(searchInput.value.trim());
+                renderPapers();
+            });
+        }
+
+        const filterBar = document.getElementById('modality-filters');
+        if (!filterBar) {
+            return;
+        }
+
+        // Count papers per modality, most common first
+        const counts = {};
+        allPapers.forEach(paper => paper.modalities.forEach(m => {
+            counts[m] = (counts[m] || 0) + 1;
+        }));
+        const modalities = Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b));
+
+        if (modalities.length === 0) {
+            filterBar.style.display = 'none';
+            return;
+        }
+
+        const makeButton = (label, value, count) => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'btn btn-sm rounded-pill modality-filter';
+            button.dataset.modality = value === null ? '' : value;
+            button.textContent = count === undefined ? label : `${label} (${count})`;
+            button.addEventListener('click', () => {
+                activeModality = activeModality === value ? null : value;
+                renderPapers();
+            });
+            filterBar.appendChild(button);
+        };
+
+        makeButton('All', null);
+        modalities.forEach(m => makeButton(m, m, counts[m]));
+    }
+
+    function renderPapers() {
+        const matches = allPapers.filter(paper =>
+            (activeModality === null || paper.modalities.includes(activeModality)) &&
+            (!searchQuery || paper.searchText.includes(searchQuery))
+        );
+
+        Object.entries(STATUS_LISTS).forEach(([status, listId]) => {
+            renderPaperList(listId, matches.filter(paper => paper.status === status));
+        });
+
+        // Highlight the active modality button
+        document.querySelectorAll('.modality-filter').forEach(button => {
+            const isActive = button.dataset.modality === (activeModality || '');
+            button.classList.toggle('btn-danger', isActive);
+            button.classList.toggle('btn-outline-secondary', !isActive);
+            button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+
+        const count = document.getElementById('paper-count');
+        if (count) {
+            const filtered = activeModality !== null || searchQuery;
+            count.textContent = filtered
+                ? `Showing ${matches.length} of ${allPapers.length} papers`
+                : `${allPapers.length} papers`;
+        }
+
+        const noMatch = document.getElementById('no-papers-match');
+        if (noMatch) {
+            noMatch.style.display = matches.length === 0 ? '' : 'none';
+        }
+    }
+
+    function renderPaperList(listId, papers) {
+        const list = document.getElementById(listId);
+        if (!list) {
+            return;
+        }
+
+        // Hide the sub-heading and list when this category has nothing to show
+        const heading = list.previousElementSibling;
+        const visible = papers.length > 0;
+        list.style.display = visible ? '' : 'none';
+        if (heading && heading.tagName === 'H5') {
+            heading.style.display = visible ? '' : 'none';
+        }
+
+        list.replaceChildren();
+        papers.forEach(paper => {
+            const li = document.createElement('li');
+            li.className = 'mb-3';
+
+            const title = document.createElement('strong');
+            title.textContent = paper.title;
+            li.appendChild(title);
+
+            if (paper.authors) {
+                li.appendChild(document.createElement('br'));
+                const authors = document.createElement('em');
+                authors.textContent = paper.authors;
+                li.appendChild(authors);
+            }
+
+            if (paper.openReviewLink) {
+                li.appendChild(document.createTextNode(' - '));
+                const link = document.createElement('a');
+                link.href = paper.openReviewLink;
+                link.target = '_blank';
+                link.textContent = 'See on OpenReview';
+                li.appendChild(link);
+            }
+
+            if (paper.modalities.length > 0) {
+                const tags = document.createElement('div');
+                tags.className = 'mt-1';
+                paper.modalities.forEach(m => {
+                    const tag = document.createElement('span');
+                    tag.className = 'badge rounded-pill bg-light text-secondary border me-1';
+                    tag.textContent = m;
+                    tags.appendChild(tag);
+                });
+                li.appendChild(tags);
+            }
+
+            list.appendChild(li);
+        });
     }
 
     // Helper function to parse CSV line (handles quoted fields with commas)
@@ -122,7 +255,11 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < line.length; i++) {
             const char = line[i];
 
-            if (char === '"') {
+            if (char === '"' && inQuotes && line[i + 1] === '"') {
+                // Escaped quote ("") inside a quoted field
+                current += '"';
+                i++;
+            } else if (char === '"') {
                 inQuotes = !inQuotes;
             } else if (char === ',' && !inQuotes) {
                 result.push(current.trim());
@@ -138,4 +275,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Load papers when page loads
     loadAcceptedPapers();
-}); 
+});

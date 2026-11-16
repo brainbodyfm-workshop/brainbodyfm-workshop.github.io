@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             new Date('2026-08-03'), // Applications Open
             new Date('2026-09-05'), // Application Deadline
             new Date('2026-10-09'), // Award Notification
-            new Date('2026-12-06')  // Workshop — PLACEHOLDER, NeurIPS 2026 date not yet announced
+            new Date('2026-12-12')  // Workshop
         ];
 
         const now = new Date();

@@ -541,6 +541,25 @@ section:not(header) {
     font-size: 0.9rem;
 }
 
+/* Panel row: labelled lists of panelists and moderators */
+.panel-speakers .panel-role {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.panel-speakers ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.15rem 0 0.6rem;
+}
+
+.panel-speakers ul:last-child {
+    margin-bottom: 0;
+}
+
 @media (max-width: 768px) {
     .timeline-item {
         grid-template-columns: 90px minmax(0, 2fr) minmax(0, 1fr);
@@ -2939,6 +2958,22 @@ footer p {
 }
 
 #accepted-demos .table td:nth-child(3) {
+    color: #6b7280;
+}
+
+/* Accepted papers: Spotlight / Poster section headings */
+#accepted-papers .paper-section-heading {
+    margin: 2.25rem 0 1.5rem;
+    font-size: 1.35rem;
+    text-decoration: underline;
+    text-decoration-color: #dc3545;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+}
+
+/* Affiliation line under the demo title */
+#accepted-demos .table .demo-affiliation {
+    font-weight: 400;
     color: #6b7280;
 }
 
